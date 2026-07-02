@@ -1,0 +1,1249 @@
+{
+  "key": "artkalMini",
+  "name": "Artkal Mini",
+  "info": "Artkal Mini 是 2.6mm 小颗豆版本，共 207 色——尺寸是标准 5mm 中豆的一半，适合高精度细节作品和小型周边制作。",
+  "colors": [
+    {
+      "id": "MA1",
+      "hex": "#FFF6D4",
+      "series": "MA",
+      "seriesName": "黄橙系"
+    },
+    {
+      "id": "MA2",
+      "hex": "#F6F9E5",
+      "series": "MA",
+      "seriesName": "黄橙系"
+    },
+    {
+      "id": "MA3",
+      "hex": "#FFFBAA",
+      "series": "MA",
+      "seriesName": "黄橙系"
+    },
+    {
+      "id": "MA4",
+      "hex": "#FFDF58",
+      "series": "MA",
+      "seriesName": "黄橙系"
+    },
+    {
+      "id": "MA5",
+      "hex": "#FECF4D",
+      "series": "MA",
+      "seriesName": "黄橙系"
+    },
+    {
+      "id": "MA6",
+      "hex": "#FFA80C",
+      "series": "MA",
+      "seriesName": "黄橙系"
+    },
+    {
+      "id": "MA7",
+      "hex": "#FF8837",
+      "series": "MA",
+      "seriesName": "黄橙系"
+    },
+    {
+      "id": "MA8",
+      "hex": "#EAC431",
+      "series": "MA",
+      "seriesName": "黄橙系"
+    },
+    {
+      "id": "MA9",
+      "hex": "#F1AA8F",
+      "series": "MA",
+      "seriesName": "黄橙系"
+    },
+    {
+      "id": "MA10",
+      "hex": "#FF8F42",
+      "series": "MA",
+      "seriesName": "黄橙系"
+    },
+    {
+      "id": "MA11",
+      "hex": "#FFE1A1",
+      "series": "MA",
+      "seriesName": "黄橙系"
+    },
+    {
+      "id": "MA12",
+      "hex": "#F4B39C",
+      "series": "MA",
+      "seriesName": "黄橙系"
+    },
+    {
+      "id": "MA13",
+      "hex": "#FFB100",
+      "series": "MA",
+      "seriesName": "黄橙系"
+    },
+    {
+      "id": "MA14",
+      "hex": "#FF6510",
+      "series": "MA",
+      "seriesName": "黄橙系"
+    },
+    {
+      "id": "MA15",
+      "hex": "#DAF05C",
+      "series": "MA",
+      "seriesName": "黄橙系"
+    },
+    {
+      "id": "MA16",
+      "hex": "#F9FBBE",
+      "series": "MA",
+      "seriesName": "黄橙系"
+    },
+    {
+      "id": "MA17",
+      "hex": "#FFD976",
+      "series": "MA",
+      "seriesName": "黄橙系"
+    },
+    {
+      "id": "MA18",
+      "hex": "#FFCA9A",
+      "series": "MA",
+      "seriesName": "黄橙系"
+    },
+    {
+      "id": "MA19",
+      "hex": "#EC7A92",
+      "series": "MA",
+      "seriesName": "黄橙系"
+    },
+    {
+      "id": "MA20",
+      "hex": "#E5BE55",
+      "series": "MA",
+      "seriesName": "黄橙系"
+    },
+    {
+      "id": "MA21",
+      "hex": "#FFE596",
+      "series": "MA",
+      "seriesName": "黄橙系"
+    },
+    {
+      "id": "MA22",
+      "hex": "#F7E898",
+      "series": "MA",
+      "seriesName": "黄橙系"
+    },
+    {
+      "id": "MA23",
+      "hex": "#F0CBB1",
+      "series": "MA",
+      "seriesName": "黄橙系"
+    },
+    {
+      "id": "MA24",
+      "hex": "#F5FCD1",
+      "series": "MA",
+      "seriesName": "黄橙系"
+    },
+    {
+      "id": "MA25",
+      "hex": "#F6D487",
+      "series": "MA",
+      "seriesName": "黄橙系"
+    },
+    {
+      "id": "MA26",
+      "hex": "#FFCB4B",
+      "series": "MA",
+      "seriesName": "黄橙系"
+    },
+    {
+      "id": "MB1",
+      "hex": "#D2E318",
+      "series": "MB",
+      "seriesName": "绿系"
+    },
+    {
+      "id": "MB2",
+      "hex": "#79CD41",
+      "series": "MB",
+      "seriesName": "绿系"
+    },
+    {
+      "id": "MB3",
+      "hex": "#82D7A1",
+      "series": "MB",
+      "seriesName": "绿系"
+    },
+    {
+      "id": "MB4",
+      "hex": "#65DF4F",
+      "series": "MB",
+      "seriesName": "绿系"
+    },
+    {
+      "id": "MB5",
+      "hex": "#5FC873",
+      "series": "MB",
+      "seriesName": "绿系"
+    },
+    {
+      "id": "MB6",
+      "hex": "#49D1AE",
+      "series": "MB",
+      "seriesName": "绿系"
+    },
+    {
+      "id": "MB7",
+      "hex": "#009696",
+      "series": "MB",
+      "seriesName": "绿系"
+    },
+    {
+      "id": "MB8",
+      "hex": "#08774F",
+      "series": "MB",
+      "seriesName": "绿系"
+    },
+    {
+      "id": "MB9",
+      "hex": "#183823",
+      "series": "MB",
+      "seriesName": "绿系"
+    },
+    {
+      "id": "MB10",
+      "hex": "#83CFC3",
+      "series": "MB",
+      "seriesName": "绿系"
+    },
+    {
+      "id": "MB11",
+      "hex": "#5A6A27",
+      "series": "MB",
+      "seriesName": "绿系"
+    },
+    {
+      "id": "MB12",
+      "hex": "#045F45",
+      "series": "MB",
+      "seriesName": "绿系"
+    },
+    {
+      "id": "MB13",
+      "hex": "#E2FFB3",
+      "series": "MB",
+      "seriesName": "绿系"
+    },
+    {
+      "id": "MB14",
+      "hex": "#9DD12E",
+      "series": "MB",
+      "seriesName": "绿系"
+    },
+    {
+      "id": "MB15",
+      "hex": "#254B3C",
+      "series": "MB",
+      "seriesName": "绿系"
+    },
+    {
+      "id": "MB16",
+      "hex": "#D0FCAD",
+      "series": "MB",
+      "seriesName": "绿系"
+    },
+    {
+      "id": "MB17",
+      "hex": "#8CA12A",
+      "series": "MB",
+      "seriesName": "绿系"
+    },
+    {
+      "id": "MB18",
+      "hex": "#D2D958",
+      "series": "MB",
+      "seriesName": "绿系"
+    },
+    {
+      "id": "MB19",
+      "hex": "#49BCA9",
+      "series": "MB",
+      "seriesName": "绿系"
+    },
+    {
+      "id": "MB20",
+      "hex": "#E8FDEC",
+      "series": "MB",
+      "seriesName": "绿系"
+    },
+    {
+      "id": "MB21",
+      "hex": "#188B81",
+      "series": "MB",
+      "seriesName": "绿系"
+    },
+    {
+      "id": "MB22",
+      "hex": "#0C5C5B",
+      "series": "MB",
+      "seriesName": "绿系"
+    },
+    {
+      "id": "MB23",
+      "hex": "#3D461B",
+      "series": "MB",
+      "seriesName": "绿系"
+    },
+    {
+      "id": "MB24",
+      "hex": "#EAFCB6",
+      "series": "MB",
+      "seriesName": "绿系"
+    },
+    {
+      "id": "MB25",
+      "hex": "#538771",
+      "series": "MB",
+      "seriesName": "绿系"
+    },
+    {
+      "id": "MB26",
+      "hex": "#8A7A40",
+      "series": "MB",
+      "seriesName": "绿系"
+    },
+    {
+      "id": "MB27",
+      "hex": "#D2DEB6",
+      "series": "MB",
+      "seriesName": "绿系"
+    },
+    {
+      "id": "MB28",
+      "hex": "#9FF4C2",
+      "series": "MB",
+      "seriesName": "绿系"
+    },
+    {
+      "id": "MB29",
+      "hex": "#BBD747",
+      "series": "MB",
+      "seriesName": "绿系"
+    },
+    {
+      "id": "MB30",
+      "hex": "#F5FFE6",
+      "series": "MB",
+      "seriesName": "绿系"
+    },
+    {
+      "id": "MB31",
+      "hex": "#BFE1C2",
+      "series": "MB",
+      "seriesName": "绿系"
+    },
+    {
+      "id": "MB32",
+      "hex": "#9FBA5C",
+      "series": "MB",
+      "seriesName": "绿系"
+    },
+    {
+      "id": "MC1",
+      "hex": "#D5E3DE",
+      "series": "MC",
+      "seriesName": "蓝青系"
+    },
+    {
+      "id": "MC2",
+      "hex": "#BBF1F4",
+      "series": "MC",
+      "seriesName": "蓝青系"
+    },
+    {
+      "id": "MC3",
+      "hex": "#73C0DF",
+      "series": "MC",
+      "seriesName": "蓝青系"
+    },
+    {
+      "id": "MC4",
+      "hex": "#33B3E1",
+      "series": "MC",
+      "seriesName": "蓝青系"
+    },
+    {
+      "id": "MC5",
+      "hex": "#00A3CA",
+      "series": "MC",
+      "seriesName": "蓝青系"
+    },
+    {
+      "id": "MC6",
+      "hex": "#58A0D9",
+      "series": "MC",
+      "seriesName": "蓝青系"
+    },
+    {
+      "id": "MC7",
+      "hex": "#0588CC",
+      "series": "MC",
+      "seriesName": "蓝青系"
+    },
+    {
+      "id": "MC8",
+      "hex": "#005F9E",
+      "series": "MC",
+      "seriesName": "蓝青系"
+    },
+    {
+      "id": "MC9",
+      "hex": "#086FB9",
+      "series": "MC",
+      "seriesName": "蓝青系"
+    },
+    {
+      "id": "MC10",
+      "hex": "#52B4E0",
+      "series": "MC",
+      "seriesName": "蓝青系"
+    },
+    {
+      "id": "MC11",
+      "hex": "#00A9B9",
+      "series": "MC",
+      "seriesName": "蓝青系"
+    },
+    {
+      "id": "MC12",
+      "hex": "#1C375A",
+      "series": "MC",
+      "seriesName": "蓝青系"
+    },
+    {
+      "id": "MC13",
+      "hex": "#CEE0F0",
+      "series": "MC",
+      "seriesName": "蓝青系"
+    },
+    {
+      "id": "MC14",
+      "hex": "#EBF5F4",
+      "series": "MC",
+      "seriesName": "蓝青系"
+    },
+    {
+      "id": "MC15",
+      "hex": "#00AAAD",
+      "series": "MC",
+      "seriesName": "蓝青系"
+    },
+    {
+      "id": "MC16",
+      "hex": "#004C7D",
+      "series": "MC",
+      "seriesName": "蓝青系"
+    },
+    {
+      "id": "MC17",
+      "hex": "#5BD4F6",
+      "series": "MC",
+      "seriesName": "蓝青系"
+    },
+    {
+      "id": "MC18",
+      "hex": "#36515C",
+      "series": "MC",
+      "seriesName": "蓝青系"
+    },
+    {
+      "id": "MC19",
+      "hex": "#0F909D",
+      "series": "MC",
+      "seriesName": "蓝青系"
+    },
+    {
+      "id": "MC20",
+      "hex": "#0084B7",
+      "series": "MC",
+      "seriesName": "蓝青系"
+    },
+    {
+      "id": "MC21",
+      "hex": "#DDECFA",
+      "series": "MC",
+      "seriesName": "蓝青系"
+    },
+    {
+      "id": "MC22",
+      "hex": "#84BAC2",
+      "series": "MC",
+      "seriesName": "蓝青系"
+    },
+    {
+      "id": "MC23",
+      "hex": "#CBDBDB",
+      "series": "MC",
+      "seriesName": "蓝青系"
+    },
+    {
+      "id": "MC24",
+      "hex": "#88BDE2",
+      "series": "MC",
+      "seriesName": "蓝青系"
+    },
+    {
+      "id": "MC25",
+      "hex": "#B3ECE0",
+      "series": "MC",
+      "seriesName": "蓝青系"
+    },
+    {
+      "id": "MC26",
+      "hex": "#3E9EBF",
+      "series": "MC",
+      "seriesName": "蓝青系"
+    },
+    {
+      "id": "MC27",
+      "hex": "#E9F0F3",
+      "series": "MC",
+      "seriesName": "蓝青系"
+    },
+    {
+      "id": "MC28",
+      "hex": "#C2CDE3",
+      "series": "MC",
+      "seriesName": "蓝青系"
+    },
+    {
+      "id": "MC29",
+      "hex": "#586B8F",
+      "series": "MC",
+      "seriesName": "蓝青系"
+    },
+    {
+      "id": "MD1",
+      "hex": "#7292E2",
+      "series": "MD",
+      "seriesName": "紫系"
+    },
+    {
+      "id": "MD2",
+      "hex": "#8B6FC6",
+      "series": "MD",
+      "seriesName": "紫系"
+    },
+    {
+      "id": "MD3",
+      "hex": "#A45EC7",
+      "series": "MD",
+      "seriesName": "紫系"
+    },
+    {
+      "id": "MD4",
+      "hex": "#9A32B2",
+      "series": "MD",
+      "seriesName": "紫系"
+    },
+    {
+      "id": "MD5",
+      "hex": "#B90095",
+      "series": "MD",
+      "seriesName": "紫系"
+    },
+    {
+      "id": "MD6",
+      "hex": "#E064C2",
+      "series": "MD",
+      "seriesName": "紫系"
+    },
+    {
+      "id": "MD7",
+      "hex": "#D84EC8",
+      "series": "MD",
+      "seriesName": "紫系"
+    },
+    {
+      "id": "MD8",
+      "hex": "#E152C6",
+      "series": "MD",
+      "seriesName": "紫系"
+    },
+    {
+      "id": "MD9",
+      "hex": "#C724B1",
+      "series": "MD",
+      "seriesName": "紫系"
+    },
+    {
+      "id": "MD10",
+      "hex": "#251B58",
+      "series": "MD",
+      "seriesName": "紫系"
+    },
+    {
+      "id": "MD11",
+      "hex": "#7A5EAD",
+      "series": "MD",
+      "seriesName": "紫系"
+    },
+    {
+      "id": "MD12",
+      "hex": "#CF8BBE",
+      "series": "MD",
+      "seriesName": "紫系"
+    },
+    {
+      "id": "MD13",
+      "hex": "#6B4FA0",
+      "series": "MD",
+      "seriesName": "紫系"
+    },
+    {
+      "id": "MD14",
+      "hex": "#7B4D8E",
+      "series": "MD",
+      "seriesName": "紫系"
+    },
+    {
+      "id": "MD15",
+      "hex": "#8F6BA0",
+      "series": "MD",
+      "seriesName": "紫系"
+    },
+    {
+      "id": "MD16",
+      "hex": "#B87CC4",
+      "series": "MD",
+      "seriesName": "紫系"
+    },
+    {
+      "id": "MD17",
+      "hex": "#D8A6D8",
+      "series": "MD",
+      "seriesName": "紫系"
+    },
+    {
+      "id": "MD18",
+      "hex": "#C78EC4",
+      "series": "MD",
+      "seriesName": "紫系"
+    },
+    {
+      "id": "MD19",
+      "hex": "#DCC8E8",
+      "series": "MD",
+      "seriesName": "紫系"
+    },
+    {
+      "id": "MD20",
+      "hex": "#B460C3",
+      "series": "MD",
+      "seriesName": "紫系"
+    },
+    {
+      "id": "MD21",
+      "hex": "#E0B8E0",
+      "series": "MD",
+      "seriesName": "紫系"
+    },
+    {
+      "id": "MD22",
+      "hex": "#D8C3D7",
+      "series": "MD",
+      "seriesName": "紫系"
+    },
+    {
+      "id": "MD23",
+      "hex": "#DEB6E0",
+      "series": "MD",
+      "seriesName": "紫系"
+    },
+    {
+      "id": "MD24",
+      "hex": "#D5C5E0",
+      "series": "MD",
+      "seriesName": "紫系"
+    },
+    {
+      "id": "MD25",
+      "hex": "#E8D8F0",
+      "series": "MD",
+      "seriesName": "紫系"
+    },
+    {
+      "id": "MD26",
+      "hex": "#DDC8DD",
+      "series": "MD",
+      "seriesName": "紫系"
+    },
+    {
+      "id": "ME1",
+      "hex": "#FDD6C9",
+      "series": "ME",
+      "seriesName": "粉系"
+    },
+    {
+      "id": "ME2",
+      "hex": "#FFDBE9",
+      "series": "ME",
+      "seriesName": "粉系"
+    },
+    {
+      "id": "ME3",
+      "hex": "#FEC0DF",
+      "series": "ME",
+      "seriesName": "粉系"
+    },
+    {
+      "id": "ME4",
+      "hex": "#FFB7E7",
+      "series": "ME",
+      "seriesName": "粉系"
+    },
+    {
+      "id": "ME5",
+      "hex": "#F8C7C9",
+      "series": "ME",
+      "seriesName": "粉系"
+    },
+    {
+      "id": "ME6",
+      "hex": "#F78FC3",
+      "series": "ME",
+      "seriesName": "粉系"
+    },
+    {
+      "id": "ME7",
+      "hex": "#FF9ED2",
+      "series": "ME",
+      "seriesName": "粉系"
+    },
+    {
+      "id": "ME8",
+      "hex": "#FFD5EC",
+      "series": "ME",
+      "seriesName": "粉系"
+    },
+    {
+      "id": "ME9",
+      "hex": "#E970CC",
+      "series": "ME",
+      "seriesName": "粉系"
+    },
+    {
+      "id": "ME10",
+      "hex": "#BE316D",
+      "series": "ME",
+      "seriesName": "粉系"
+    },
+    {
+      "id": "ME11",
+      "hex": "#F4A0BE",
+      "series": "ME",
+      "seriesName": "粉系"
+    },
+    {
+      "id": "ME12",
+      "hex": "#FFA5C6",
+      "series": "ME",
+      "seriesName": "粉系"
+    },
+    {
+      "id": "ME13",
+      "hex": "#E8649E",
+      "series": "ME",
+      "seriesName": "粉系"
+    },
+    {
+      "id": "ME14",
+      "hex": "#F551A2",
+      "series": "ME",
+      "seriesName": "粉系"
+    },
+    {
+      "id": "ME15",
+      "hex": "#F13D74",
+      "series": "ME",
+      "seriesName": "粉系"
+    },
+    {
+      "id": "ME16",
+      "hex": "#FFD1BA",
+      "series": "ME",
+      "seriesName": "粉系"
+    },
+    {
+      "id": "ME17",
+      "hex": "#F8C4B8",
+      "series": "ME",
+      "seriesName": "粉系"
+    },
+    {
+      "id": "ME18",
+      "hex": "#F0A8B8",
+      "series": "ME",
+      "seriesName": "粉系"
+    },
+    {
+      "id": "ME19",
+      "hex": "#FFD5EC",
+      "series": "ME",
+      "seriesName": "粉系"
+    },
+    {
+      "id": "ME20",
+      "hex": "#F3DCE8",
+      "series": "ME",
+      "seriesName": "粉系"
+    },
+    {
+      "id": "ME21",
+      "hex": "#BD9CA3",
+      "series": "ME",
+      "seriesName": "粉系"
+    },
+    {
+      "id": "ME22",
+      "hex": "#C578A5",
+      "series": "ME",
+      "seriesName": "粉系"
+    },
+    {
+      "id": "ME23",
+      "hex": "#A37A9B",
+      "series": "ME",
+      "seriesName": "粉系"
+    },
+    {
+      "id": "ME24",
+      "hex": "#F4E8FF",
+      "series": "ME",
+      "seriesName": "粉系"
+    },
+    {
+      "id": "MF1",
+      "hex": "#FF7F67",
+      "series": "MF",
+      "seriesName": "红橙棕系"
+    },
+    {
+      "id": "MF2",
+      "hex": "#FC3D46",
+      "series": "MF",
+      "seriesName": "红橙棕系"
+    },
+    {
+      "id": "MF3",
+      "hex": "#F74941",
+      "series": "MF",
+      "seriesName": "红橙棕系"
+    },
+    {
+      "id": "MF4",
+      "hex": "#FC283C",
+      "series": "MF",
+      "seriesName": "红橙棕系"
+    },
+    {
+      "id": "MF5",
+      "hex": "#E7002F",
+      "series": "MF",
+      "seriesName": "红橙棕系"
+    },
+    {
+      "id": "MF6",
+      "hex": "#D30022",
+      "series": "MF",
+      "seriesName": "红橙棕系"
+    },
+    {
+      "id": "MF7",
+      "hex": "#FF957B",
+      "series": "MF",
+      "seriesName": "红橙棕系"
+    },
+    {
+      "id": "MF8",
+      "hex": "#FEC2A6",
+      "series": "MF",
+      "seriesName": "红橙棕系"
+    },
+    {
+      "id": "MF9",
+      "hex": "#E69C79",
+      "series": "MF",
+      "seriesName": "红橙棕系"
+    },
+    {
+      "id": "MF10",
+      "hex": "#AB613C",
+      "series": "MF",
+      "seriesName": "红橙棕系"
+    },
+    {
+      "id": "MF11",
+      "hex": "#D37C46",
+      "series": "MF",
+      "seriesName": "红橙棕系"
+    },
+    {
+      "id": "MF12",
+      "hex": "#C1444A",
+      "series": "MF",
+      "seriesName": "红橙棕系"
+    },
+    {
+      "id": "MF13",
+      "hex": "#8A4526",
+      "series": "MF",
+      "seriesName": "红橙棕系"
+    },
+    {
+      "id": "MF14",
+      "hex": "#5A2121",
+      "series": "MF",
+      "seriesName": "红橙棕系"
+    },
+    {
+      "id": "MF15",
+      "hex": "#971937",
+      "series": "MF",
+      "seriesName": "红橙棕系"
+    },
+    {
+      "id": "MF16",
+      "hex": "#FF8D6D",
+      "series": "MF",
+      "seriesName": "红橙棕系"
+    },
+    {
+      "id": "MF17",
+      "hex": "#E35205",
+      "series": "MF",
+      "seriesName": "红橙棕系"
+    },
+    {
+      "id": "MF18",
+      "hex": "#FF6A39",
+      "series": "MF",
+      "seriesName": "红橙棕系"
+    },
+    {
+      "id": "MF19",
+      "hex": "#C74651",
+      "series": "MF",
+      "seriesName": "红橙棕系"
+    },
+    {
+      "id": "MF20",
+      "hex": "#D8A89E",
+      "series": "MF",
+      "seriesName": "红橙棕系"
+    },
+    {
+      "id": "MF21",
+      "hex": "#EB9DB9",
+      "series": "MF",
+      "seriesName": "红橙棕系"
+    },
+    {
+      "id": "MF22",
+      "hex": "#FFD4D4",
+      "series": "MF",
+      "seriesName": "红橙棕系"
+    },
+    {
+      "id": "MF23",
+      "hex": "#F4B39C",
+      "series": "MF",
+      "seriesName": "红橙棕系"
+    },
+    {
+      "id": "MF24",
+      "hex": "#F7C1C5",
+      "series": "MF",
+      "seriesName": "红橙棕系"
+    },
+    {
+      "id": "MF25",
+      "hex": "#FC5768",
+      "series": "MF",
+      "seriesName": "红橙棕系"
+    },
+    {
+      "id": "MG1",
+      "hex": "#FFE7C8",
+      "series": "MG",
+      "seriesName": "棕系"
+    },
+    {
+      "id": "MG2",
+      "hex": "#F5E6D3",
+      "series": "MG",
+      "seriesName": "棕系"
+    },
+    {
+      "id": "MG3",
+      "hex": "#E8D4C0",
+      "series": "MG",
+      "seriesName": "棕系"
+    },
+    {
+      "id": "MG4",
+      "hex": "#D4B896",
+      "series": "MG",
+      "seriesName": "棕系"
+    },
+    {
+      "id": "MG5",
+      "hex": "#EDB045",
+      "series": "MG",
+      "seriesName": "棕系"
+    },
+    {
+      "id": "MG6",
+      "hex": "#D4A04A",
+      "series": "MG",
+      "seriesName": "棕系"
+    },
+    {
+      "id": "MG7",
+      "hex": "#C58B68",
+      "series": "MG",
+      "seriesName": "棕系"
+    },
+    {
+      "id": "MG8",
+      "hex": "#A86C4A",
+      "series": "MG",
+      "seriesName": "棕系"
+    },
+    {
+      "id": "MG9",
+      "hex": "#8B6E4E",
+      "series": "MG",
+      "seriesName": "棕系"
+    },
+    {
+      "id": "MG10",
+      "hex": "#6B4D3A",
+      "series": "MG",
+      "seriesName": "棕系"
+    },
+    {
+      "id": "MG11",
+      "hex": "#9D5B3E",
+      "series": "MG",
+      "seriesName": "棕系"
+    },
+    {
+      "id": "MG12",
+      "hex": "#B7714A",
+      "series": "MG",
+      "seriesName": "棕系"
+    },
+    {
+      "id": "MG13",
+      "hex": "#8A5A3C",
+      "series": "MG",
+      "seriesName": "棕系"
+    },
+    {
+      "id": "MG14",
+      "hex": "#5E4029",
+      "series": "MG",
+      "seriesName": "棕系"
+    },
+    {
+      "id": "MG15",
+      "hex": "#3D2E24",
+      "series": "MG",
+      "seriesName": "棕系"
+    },
+    {
+      "id": "MG16",
+      "hex": "#F0AB47",
+      "series": "MG",
+      "seriesName": "棕系"
+    },
+    {
+      "id": "MG17",
+      "hex": "#D4A54A",
+      "series": "MG",
+      "seriesName": "棕系"
+    },
+    {
+      "id": "MG18",
+      "hex": "#BF8C6E",
+      "series": "MG",
+      "seriesName": "棕系"
+    },
+    {
+      "id": "MG19",
+      "hex": "#F0AB47",
+      "series": "MG",
+      "seriesName": "棕系"
+    },
+    {
+      "id": "MG20",
+      "hex": "#AE6949",
+      "series": "MG",
+      "seriesName": "棕系"
+    },
+    {
+      "id": "MG21",
+      "hex": "#BF8C6E",
+      "series": "MG",
+      "seriesName": "棕系"
+    },
+    {
+      "id": "MH1",
+      "hex": "#FFFFFF",
+      "series": "MH",
+      "seriesName": "灰白系"
+    },
+    {
+      "id": "MH2",
+      "hex": "#F6F6F6",
+      "series": "MH",
+      "seriesName": "灰白系"
+    },
+    {
+      "id": "MH3",
+      "hex": "#EDEBEB",
+      "series": "MH",
+      "seriesName": "灰白系"
+    },
+    {
+      "id": "MH4",
+      "hex": "#E0DEDE",
+      "series": "MH",
+      "seriesName": "灰白系"
+    },
+    {
+      "id": "MH5",
+      "hex": "#D3D3D3",
+      "series": "MH",
+      "seriesName": "灰白系"
+    },
+    {
+      "id": "MH6",
+      "hex": "#3A3A3A",
+      "series": "MH",
+      "seriesName": "灰白系"
+    },
+    {
+      "id": "MH7",
+      "hex": "#A8A8A8",
+      "series": "MH",
+      "seriesName": "灰白系"
+    },
+    {
+      "id": "MH8",
+      "hex": "#8E8E8E",
+      "series": "MH",
+      "seriesName": "灰白系"
+    },
+    {
+      "id": "MH9",
+      "hex": "#787878",
+      "series": "MH",
+      "seriesName": "灰白系"
+    },
+    {
+      "id": "MH10",
+      "hex": "#E2E0E7",
+      "series": "MH",
+      "seriesName": "灰白系"
+    },
+    {
+      "id": "MH11",
+      "hex": "#484848",
+      "series": "MH",
+      "seriesName": "灰白系"
+    },
+    {
+      "id": "MH12",
+      "hex": "#363636",
+      "series": "MH",
+      "seriesName": "灰白系"
+    },
+    {
+      "id": "MH13",
+      "hex": "#282828",
+      "series": "MH",
+      "seriesName": "灰白系"
+    },
+    {
+      "id": "MH14",
+      "hex": "#1A1A1A",
+      "series": "MH",
+      "seriesName": "灰白系"
+    },
+    {
+      "id": "MH15",
+      "hex": "#99ABAC",
+      "series": "MH",
+      "seriesName": "灰白系"
+    },
+    {
+      "id": "MH16",
+      "hex": "#FBF2E4",
+      "series": "MH",
+      "seriesName": "灰白系"
+    },
+    {
+      "id": "MH17",
+      "hex": "#F0EAE0",
+      "series": "MH",
+      "seriesName": "灰白系"
+    },
+    {
+      "id": "MH18",
+      "hex": "#E3DCD0",
+      "series": "MH",
+      "seriesName": "灰白系"
+    },
+    {
+      "id": "MH19",
+      "hex": "#FBF2E4",
+      "series": "MH",
+      "seriesName": "灰白系"
+    },
+    {
+      "id": "MH20",
+      "hex": "#9EAEAD",
+      "series": "MH",
+      "seriesName": "灰白系"
+    },
+    {
+      "id": "MH21",
+      "hex": "#C8CACA",
+      "series": "MH",
+      "seriesName": "灰白系"
+    },
+    {
+      "id": "MH22",
+      "hex": "#EDEDE7",
+      "series": "MH",
+      "seriesName": "灰白系"
+    },
+    {
+      "id": "MH23",
+      "hex": "#B4B8A7",
+      "series": "MH",
+      "seriesName": "灰白系"
+    },
+    {
+      "id": "MH24",
+      "hex": "#9EAEAD",
+      "series": "MH",
+      "seriesName": "灰白系"
+    }
+  ]
+}

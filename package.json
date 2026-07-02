@@ -1,0 +1,24 @@
+{
+  "name": "ppd-web",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "migrate-palettes": "node scripts/migrate-palettes.mjs"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "^0.11.0",
+    "naive-ui": "^2.41.0",
+    "nuxt": "^4.4.0",
+    "pinia": "^3.0.0",
+    "vue": "^3.5.13",
+    "vue-router": "^5.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.0"
+  },
+  "packageManager": "pnpm@10.20.0"
+}

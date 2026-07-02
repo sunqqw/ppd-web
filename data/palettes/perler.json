@@ -1,0 +1,751 @@
+{
+  "key": "perler",
+  "name": "Perler",
+  "info": "Perler 是源自美国的老牌拼豆品牌，颜色经典，品质稳定。124个色号，覆盖标准色、粉彩、夜光、亮粉、双色等。",
+  "colors": [
+    {
+      "id": "P01",
+      "hex": "#F1F1F1",
+      "series": "基础",
+      "seriesName": "基础色系"
+    },
+    {
+      "id": "P02",
+      "hex": "#E0DEA9",
+      "series": "基础",
+      "seriesName": "基础色系"
+    },
+    {
+      "id": "P03",
+      "hex": "#ECD800",
+      "series": "基础",
+      "seriesName": "基础色系"
+    },
+    {
+      "id": "P04",
+      "hex": "#ED6120",
+      "series": "基础",
+      "seriesName": "基础色系"
+    },
+    {
+      "id": "P05",
+      "hex": "#F01820",
+      "series": "基础",
+      "seriesName": "基础色系"
+    },
+    {
+      "id": "P06",
+      "hex": "#DD669B",
+      "series": "基础",
+      "seriesName": "基础色系"
+    },
+    {
+      "id": "P07",
+      "hex": "#604089",
+      "series": "基础",
+      "seriesName": "基础色系"
+    },
+    {
+      "id": "P08",
+      "hex": "#2B3F87",
+      "series": "基础",
+      "seriesName": "基础色系"
+    },
+    {
+      "id": "P09",
+      "hex": "#3370C0",
+      "series": "基础",
+      "seriesName": "基础色系"
+    },
+    {
+      "id": "P10",
+      "hex": "#1C753E",
+      "series": "基础",
+      "seriesName": "基础色系"
+    },
+    {
+      "id": "P11",
+      "hex": "#56BA9F",
+      "series": "基础",
+      "seriesName": "基础色系"
+    },
+    {
+      "id": "P12",
+      "hex": "#513931",
+      "series": "基础",
+      "seriesName": "基础色系"
+    },
+    {
+      "id": "P17",
+      "hex": "#8A8D91",
+      "series": "基础",
+      "seriesName": "基础色系"
+    },
+    {
+      "id": "P18",
+      "hex": "#2E2F32",
+      "series": "基础",
+      "seriesName": "基础色系"
+    },
+    {
+      "id": "P20",
+      "hex": "#8C372C",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P21",
+      "hex": "#815D34",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P22",
+      "hex": "#BC4C4C",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P23",
+      "hex": "#D67B6C",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P24",
+      "hex": "#E09B8D",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P25",
+      "hex": "#E8B4A0",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P26",
+      "hex": "#EDC9B5",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P27",
+      "hex": "#F2DACE",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P28",
+      "hex": "#F7E8DB",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P29",
+      "hex": "#F9EFE6",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P30",
+      "hex": "#ECD8C6",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P31",
+      "hex": "#DCCAB0",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P32",
+      "hex": "#CBB69B",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P33",
+      "hex": "#EEBAB2",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P35",
+      "hex": "#BC9371",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P38",
+      "hex": "#F22A7B",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P47",
+      "hex": "#DCE002",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P48",
+      "hex": "#FF7700",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P49",
+      "hex": "#019E43",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P50",
+      "hex": "#FF3991",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P52",
+      "hex": "#5390D1",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P53",
+      "hex": "#76C882",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P54",
+      "hex": "#8A72C1",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P56",
+      "hex": "#FEF875",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P57",
+      "hex": "#F1AA0C",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P58",
+      "hex": "#93C8D4",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P59",
+      "hex": "#FF3851",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P60",
+      "hex": "#A24B9C",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P61",
+      "hex": "#6CBE13",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P62",
+      "hex": "#2B89C6",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P63",
+      "hex": "#FF8285",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P70",
+      "hex": "#647CBE",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P75",
+      "hex": "#BEC696",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P79",
+      "hex": "#F6B3DD",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P80",
+      "hex": "#4FAD42",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P81",
+      "hex": "#EEE3CF",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P82",
+      "hex": "#AD98D4",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P83",
+      "hex": "#E44892",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P85",
+      "hex": "#BB7634",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P88",
+      "hex": "#A53061",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P89",
+      "hex": "#406AE1",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P90",
+      "hex": "#D48437",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P91",
+      "hex": "#067C81",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P92",
+      "hex": "#4D5156",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P93",
+      "hex": "#8297D9",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P96",
+      "hex": "#801922",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P97",
+      "hex": "#BDDA01",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P98",
+      "hex": "#E4B690",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P100",
+      "hex": "#F97E79",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P101",
+      "hex": "#7AAEA2",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P102",
+      "hex": "#84B791",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P103",
+      "hex": "#CAC033",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P104",
+      "hex": "#D7A8A2",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P105",
+      "hex": "#777B81",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P179",
+      "hex": "#114938",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P181",
+      "hex": "#B3BAB8",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P182",
+      "hex": "#AF9FCE",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P199",
+      "hex": "#008F53",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P200",
+      "hex": "#0065B1",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P201",
+      "hex": "#2F3C55",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P202",
+      "hex": "#A9CDD5",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P203",
+      "hex": "#F2AFB7",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P204",
+      "hex": "#E1747A",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P205",
+      "hex": "#C9A385",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P206",
+      "hex": "#94A19D",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P207",
+      "hex": "#4F595A",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P208",
+      "hex": "#DEDACE",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P210",
+      "hex": "#B1628E",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P211",
+      "hex": "#D14337",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P212",
+      "hex": "#D9593A",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P213",
+      "hex": "#F5A168",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P214",
+      "hex": "#D8E47C",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P215",
+      "hex": "#93B0BD",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P216",
+      "hex": "#4AC0D8",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P217",
+      "hex": "#00A4AC",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P218",
+      "hex": "#047F8A",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P219",
+      "hex": "#7F971A",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P220",
+      "hex": "#696E31",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P239",
+      "hex": "#C8B693",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P240",
+      "hex": "#B3EED5",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P241",
+      "hex": "#A3DE6F",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P242",
+      "hex": "#F479B0",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P243",
+      "hex": "#503B9C",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P244",
+      "hex": "#D25D72",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P245",
+      "hex": "#4E56A3",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P246",
+      "hex": "#FD5918",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P247",
+      "hex": "#005D57",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P248",
+      "hex": "#6F3255",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P249",
+      "hex": "#DA8C2C",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P250",
+      "hex": "#7E5446",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P251",
+      "hex": "#8C8CA7",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P252",
+      "hex": "#4C6388",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P253",
+      "hex": "#9AA98E",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P254",
+      "hex": "#EFB79B",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P255",
+      "hex": "#CA3B65",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P256",
+      "hex": "#CB59B9",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P257",
+      "hex": "#714875",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P258",
+      "hex": "#C8C85C",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P259",
+      "hex": "#988C8C",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P260",
+      "hex": "#14313B",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P261",
+      "hex": "#392928",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P262",
+      "hex": "#5E6D7B",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P263",
+      "hex": "#BED4A6",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P265",
+      "hex": "#C685B1",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P272",
+      "hex": "#FF9A8B",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P273",
+      "hex": "#FC9574",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P274",
+      "hex": "#F6CA69",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P275",
+      "hex": "#0090AC",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P276",
+      "hex": "#F8C7C9",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "P961",
+      "hex": "#9D2B3A",
+      "series": "扩展",
+      "seriesName": "扩展色系"
+    }
+  ]
+}

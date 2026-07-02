@@ -1,0 +1,1063 @@
+{
+  "key": "artkal",
+  "name": "Artkal",
+  "info": "Artkal 拼豆以高品质著称，颜色鲜艳持久，是专业玩家的首选品牌。色号最齐全的品牌，176色几乎覆盖所有色调，中文圈最常见。",
+  "colors": [
+    {
+      "id": "S01",
+      "hex": "#FFFFFF",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S02",
+      "hex": "#FFA38B",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S03",
+      "hex": "#FF8200",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S04",
+      "hex": "#FA4616",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S05",
+      "hex": "#EE2737",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S06",
+      "hex": "#EF64A2",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S07",
+      "hex": "#97999B",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S08",
+      "hex": "#26D07C",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S09",
+      "hex": "#007371",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S10",
+      "hex": "#56B7E6",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S11",
+      "hex": "#0050B5",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S12",
+      "hex": "#9063CD",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S13",
+      "hex": "#000000",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S14",
+      "hex": "#FDDA24",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S15",
+      "hex": "#A72B2A",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S16",
+      "hex": "#674736",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S17",
+      "hex": "#7B4D35",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S18",
+      "hex": "#EAA794",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S19",
+      "hex": "#F8C1B8",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S20",
+      "hex": "#249E6B",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S21",
+      "hex": "#93C90E",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S22",
+      "hex": "#483698",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S23",
+      "hex": "#7D55C7",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S24",
+      "hex": "#1164C9",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S25",
+      "hex": "#EF60A3",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S26",
+      "hex": "#F04E98",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S27",
+      "hex": "#FFC72C",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S28",
+      "hex": "#EF95CF",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S29",
+      "hex": "#FBDB65",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S30",
+      "hex": "#A4E6E8",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S31",
+      "hex": "#B5E3D8",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S32",
+      "hex": "#FECB8B",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S33",
+      "hex": "#C5B4E3",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S34",
+      "hex": "#D50032",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S35",
+      "hex": "#F7CED7",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S36",
+      "hex": "#E06287",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S37",
+      "hex": "#8BD3E6",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S38",
+      "hex": "#BC204B",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S39",
+      "hex": "#FF7F41",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S40",
+      "hex": "#F99FC9",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S41",
+      "hex": "#9A5516",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S42",
+      "hex": "#A09F9D",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S43",
+      "hex": "#75787B",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S44",
+      "hex": "#9BCBEB",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S45",
+      "hex": "#00B2A9",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S46",
+      "hex": "#8EDD65",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S47",
+      "hex": "#A6631B",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S48",
+      "hex": "#FFC845",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S49",
+      "hex": "#973961",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S50",
+      "hex": "#FFB3AB",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S51",
+      "hex": "#FFF8DB",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S52",
+      "hex": "#F8E08E",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S53",
+      "hex": "#62A0E6",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S54",
+      "hex": "#0090DA",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S55",
+      "hex": "#ADDC91",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S56",
+      "hex": "#FF6A39",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S57",
+      "hex": "#B33D26",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S58",
+      "hex": "#BA0C2F",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S59",
+      "hex": "#5949A7",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S60",
+      "hex": "#9678D3",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S61",
+      "hex": "#E6DE77",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S62",
+      "hex": "#007C58",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S63",
+      "hex": "#4C5914",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S64",
+      "hex": "#2C2D65",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S65",
+      "hex": "#F0EC74",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S66",
+      "hex": "#EE5340",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S67",
+      "hex": "#ECC3B2",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S68",
+      "hex": "#E7B78A",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S69",
+      "hex": "#212721",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S70",
+      "hex": "#BABC16",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S71",
+      "hex": "#008522",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S72",
+      "hex": "#67D9DF",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S73",
+      "hex": "#48A9C5",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S74",
+      "hex": "#04A9C7",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S75",
+      "hex": "#0085AD",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S76",
+      "hex": "#00A7B5",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S77",
+      "hex": "#D9D9D6",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S78",
+      "hex": "#C8C9C7",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S79",
+      "hex": "#B1B3B3",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S80",
+      "hex": "#A2A569",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S81",
+      "hex": "#D5A286",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S82",
+      "hex": "#C58B68",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S83",
+      "hex": "#B15533",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S84",
+      "hex": "#AB5C57",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S85",
+      "hex": "#8A2A2B",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S86",
+      "hex": "#F29D04",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S87",
+      "hex": "#FF808B",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S88",
+      "hex": "#DA1884",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S89",
+      "hex": "#53565A",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S90",
+      "hex": "#FFC56E",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S91",
+      "hex": "#183028",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S92",
+      "hex": "#C69214",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S93",
+      "hex": "#EDC8A3",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S94",
+      "hex": "#EAA794",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S95",
+      "hex": "#E8927C",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S96",
+      "hex": "#FF8D6D",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S97",
+      "hex": "#E35205",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S98",
+      "hex": "#80B6E8",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S99",
+      "hex": "#5CA9CC",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S100",
+      "hex": "#5DB3CB",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S101",
+      "hex": "#00A3E1",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S102",
+      "hex": "#0077CF",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S103",
+      "hex": "#0067B9",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S104",
+      "hex": "#007DBA",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S105",
+      "hex": "#00859B",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S106",
+      "hex": "#0076A8",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S107",
+      "hex": "#007096",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S108",
+      "hex": "#E6C78A",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S109",
+      "hex": "#CEB888",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S110",
+      "hex": "#C6AA76",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S111",
+      "hex": "#A08629",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S112",
+      "hex": "#897630",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S113",
+      "hex": "#C3C6A8",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S114",
+      "hex": "#C0BB87",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S115",
+      "hex": "#B0AA7E",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S116",
+      "hex": "#A3AA83",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S117",
+      "hex": "#77744D",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S118",
+      "hex": "#5E6738",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S119",
+      "hex": "#98DBCE",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S120",
+      "hex": "#9BE3BF",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S121",
+      "hex": "#6BBBAE",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S122",
+      "hex": "#00BB7E",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S123",
+      "hex": "#31B700",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S124",
+      "hex": "#035F1D",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S125",
+      "hex": "#007864",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S126",
+      "hex": "#00685E",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S127",
+      "hex": "#DECDE7",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S128",
+      "hex": "#C98BDB",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S129",
+      "hex": "#DCB6C9",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S130",
+      "hex": "#DD74A1",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S131",
+      "hex": "#AD96DC",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S132",
+      "hex": "#EF426F",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S133",
+      "hex": "#C724B1",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S134",
+      "hex": "#8031A7",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S135",
+      "hex": "#9FAEE5",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S136",
+      "hex": "#B4B2E4",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S137",
+      "hex": "#5F8DDA",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S138",
+      "hex": "#5780D2",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S139",
+      "hex": "#5576D1",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S140",
+      "hex": "#3C62C3",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S141",
+      "hex": "#466CCA",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S142",
+      "hex": "#365ABD",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S143",
+      "hex": "#1E22AA",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S144",
+      "hex": "#002D72",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S145",
+      "hex": "#E9E186",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S146",
+      "hex": "#8C243D",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S147",
+      "hex": "#86C8BC",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S148",
+      "hex": "#724736",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S149",
+      "hex": "#FCD299",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S150",
+      "hex": "#8B84D7",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S151",
+      "hex": "#335525",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S152",
+      "hex": "#A7A4E0",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S153",
+      "hex": "#C6C4EA",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S154",
+      "hex": "#EBC29D",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S155",
+      "hex": "#C58B68",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S156",
+      "hex": "#63666A",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S157",
+      "hex": "#46494C",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S158",
+      "hex": "#191D19",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "S159",
+      "hex": "#88888D",
+      "series": "S",
+      "seriesName": "标准色系"
+    },
+    {
+      "id": "SE01",
+      "hex": "#D1DDE6",
+      "series": "SE",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "SE02",
+      "hex": "#9BB8E3",
+      "series": "SE",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "SE03",
+      "hex": "#5E8AB4",
+      "series": "SE",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "SE04",
+      "hex": "#6AD1E3",
+      "series": "SE",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "SE05",
+      "hex": "#03C1AA",
+      "series": "SE",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "SE06",
+      "hex": "#126AD4",
+      "series": "SE",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "SE07",
+      "hex": "#BFA5B8",
+      "series": "SE",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "SE08",
+      "hex": "#9B7793",
+      "series": "SE",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "SE09",
+      "hex": "#693C5E",
+      "series": "SE",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "SE10",
+      "hex": "#C964CF",
+      "series": "SE",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "SE11",
+      "hex": "#AD1AAC",
+      "series": "SE",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "SE12",
+      "hex": "#FFB25B",
+      "series": "SE",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "SE13",
+      "hex": "#E6A65D",
+      "series": "SE",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "SE14",
+      "hex": "#D38235",
+      "series": "SE",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "SE15",
+      "hex": "#C16C18",
+      "series": "SE",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "SE16",
+      "hex": "#F5B6CD",
+      "series": "SE",
+      "seriesName": "扩展色系"
+    },
+    {
+      "id": "SE17",
+      "hex": "#5D2A2C",
+      "series": "SE",
+      "seriesName": "扩展色系"
+    }
+  ]
+}
