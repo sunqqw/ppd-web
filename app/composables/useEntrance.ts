@@ -18,8 +18,21 @@ export function useEntrance() {
     showEntrance.value = false
     nextTick(() => {
       workspaceReady.value = true
-      const { gsap } = useGSAP()
-      gsap.from('.workspace', { autoAlpha: 0, duration: 0.45, ease: 'power2.out' })
+      const root = document.querySelector('.workspace')
+      if (root instanceof HTMLElement) {
+        const { workspaceEntrance } = useGsapMotion()
+        workspaceEntrance(root)
+      }
+    })
+  }
+
+  function playWorkspaceEntranceIfReady() {
+    nextTick(() => {
+      const root = document.querySelector('.workspace')
+      if (root instanceof HTMLElement) {
+        const { workspaceEntrance } = useGsapMotion()
+        workspaceEntrance(root)
+      }
     })
   }
 
@@ -28,5 +41,6 @@ export function useEntrance() {
     workspaceReady,
     checkEntrance,
     onEntranceComplete,
+    playWorkspaceEntranceIfReady,
   }
 }

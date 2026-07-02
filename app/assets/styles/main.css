@@ -6,14 +6,40 @@
   padding: 0;
 }
 
+:root {
+  --ws-bg: #eef1f6;
+  --ws-surface: #ffffff;
+  --ws-surface-raised: #fafbfc;
+  --ws-border: #e2e6ed;
+  --ws-border-subtle: #edf0f4;
+  --ws-text: #1c2333;
+  --ws-text-secondary: #64748b;
+  --ws-text-muted: #94a3b8;
+  --ws-primary: #2080f0;
+  --ws-primary-hover: #4098fc;
+  --ws-primary-soft: #e8f2fe;
+  --ws-primary-ring: rgba(32, 128, 240, 0.28);
+  --ws-success: #18a058;
+  --ws-shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04);
+  --ws-shadow-md: 0 4px 16px rgba(15, 23, 42, 0.06);
+  --ws-radius: 10px;
+  --ws-radius-sm: 8px;
+  --ws-header-h: 56px;
+  --ws-toolbar-w: 60px;
+  --ws-panel-w: 288px;
+  --ws-canvas-bg: #dfe3ea;
+  --ws-canvas-dot: #cdd2db;
+}
+
 html,
 body,
 #__nuxt {
   height: 100%;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  background: #f5f6f8;
-  color: #333;
+  background: var(--ws-bg);
+  color: var(--ws-text);
   overflow: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
 button {
@@ -33,19 +59,28 @@ a {
   flex-direction: column;
   height: 100vh;
   overflow: hidden;
+  background: var(--ws-bg);
 }
 
 .workspace-main {
+  position: relative;
   display: flex;
   flex: 1;
   overflow: hidden;
+  padding: 10px;
+  gap: 10px;
 }
 
 .canvas-area {
   flex: 1;
   position: relative;
   overflow: hidden;
-  background: #e8eaed;
+  background-color: var(--ws-canvas-bg);
+  background-image: radial-gradient(circle, var(--ws-canvas-dot) 1px, transparent 1px);
+  background-size: 16px 16px;
+  border-radius: var(--ws-radius);
+  box-shadow: var(--ws-shadow-sm);
+  border: 1px solid var(--ws-border);
   cursor: crosshair;
 }
 
@@ -57,32 +92,48 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 8px;
-  color: #555;
-  transition: background 0.15s, color 0.15s;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--ws-radius-sm);
+  color: var(--ws-text-secondary);
+  font-size: 18px;
+  position: relative;
+  transition: background 0.15s, color 0.15s, box-shadow 0.15s;
 }
 
 .tool-btn:hover {
-  background: #eef0f3;
+  background: var(--ws-border-subtle);
+  color: var(--ws-text);
 }
 
 .tool-btn.active {
-  background: #e3f0ff;
-  color: #2080f0;
+  background: var(--ws-primary-soft);
+  color: var(--ws-primary);
+  box-shadow: inset 0 0 0 1px rgba(32, 128, 240, 0.15);
+}
+
+.tool-btn.active::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 4px;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--ws-primary);
 }
 
 .color-swatch {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 28px;
-  border-radius: 6px;
+  width: 30px;
+  height: 30px;
+  border-radius: 7px;
   border: 2px solid transparent;
   cursor: pointer;
-  transition: transform 0.1s, border-color 0.1s;
+  transition: transform 0.12s, border-color 0.12s, box-shadow 0.12s;
   overflow: hidden;
 }
 
@@ -96,21 +147,55 @@ a {
 }
 
 .color-swatch:hover {
-  transform: scale(1.1);
+  transform: scale(1.08);
 }
 
 .color-swatch.selected {
-  border-color: #2080f0;
-  box-shadow: 0 0 0 2px rgba(32, 128, 240, 0.3);
+  border-color: var(--ws-primary);
+  box-shadow: 0 0 0 2px var(--ws-primary-ring);
 }
 
 .panel-section {
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 }
 
 .panel-section-title {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
-  color: #666;
+  color: var(--ws-text-secondary);
   margin-bottom: 8px;
+  letter-spacing: 0.02em;
+}
+
+.ws-range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 4px;
+  height: 72px;
+  border-radius: 2px;
+  background: var(--ws-border);
+  outline: none;
+  writing-mode: vertical-lr;
+  direction: rtl;
+  cursor: pointer;
+}
+
+.ws-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--ws-primary);
+  box-shadow: 0 1px 4px rgba(32, 128, 240, 0.35);
+  cursor: pointer;
+}
+
+.ws-range::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--ws-primary);
+  border: none;
+  box-shadow: 0 1px 4px rgba(32, 128, 240, 0.35);
+  cursor: pointer;
 }

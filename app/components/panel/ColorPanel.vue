@@ -57,6 +57,20 @@ function onQuickColorContextMenu(index: number, colorId: string | null, e: Mouse
   e.preventDefault()
   settingsStore.setQuickColor(index, null)
 }
+
+const { colorSelectPulse } = useGsapMotion()
+
+function onColorSelect(colorId: string, e: MouseEvent) {
+  canvasStore.setSelectedColor(colorId)
+  colorSelectPulse(e.currentTarget as Element)
+}
+
+function onQuickColorClickWithPulse(index: number, colorId: string | null, e: MouseEvent) {
+  onQuickColorClick(index, colorId, e)
+  if (colorId && !e.altKey) {
+    colorSelectPulse(e.currentTarget as Element)
+  }
+}
 </script>
 
 <template>
@@ -91,7 +105,7 @@ function onQuickColorContextMenu(index: number, colorId: string | null, e: Mouse
           :class="{ empty: !colorId, selected: colorId && canvasStore.selectedColorId === colorId }"
           :style="colorId ? { background: getHex(colorId) ?? '#ccc' } : undefined"
           :title="colorId ? `${colorId}（选中其他色后点击替换，右键清除）` : '点击添加当前选中色'"
-          @click="onQuickColorClick(index, colorId, $event)"
+          @click="onQuickColorClickWithPulse(index, colorId, $event)"
           @contextmenu="onQuickColorContextMenu(index, colorId, $event)"
         >
           <span v-if="!colorId" class="quick-color-add">+</span>
@@ -116,7 +130,7 @@ function onQuickColorContextMenu(index: number, colorId: string | null, e: Mouse
           :class="{ selected: canvasStore.selectedColorId === color.id }"
           :style="{ background: color.hex }"
           :title="color.id"
-          @click="canvasStore.setSelectedColor(color.id)"
+          @click="onColorSelect(color.id, $event)"
         >
           <span
             class="color-swatch-label"
@@ -144,7 +158,7 @@ function onQuickColorContextMenu(index: number, colorId: string | null, e: Mouse
   display: inline-block;
   margin-top: 8px;
   font-size: 12px;
-  color: #2080f0;
+  color: var(--ws-primary);
 }
 
 .palette-manage-link:hover {
@@ -169,20 +183,20 @@ function onQuickColorContextMenu(index: number, colorId: string | null, e: Mouse
   align-items: center;
   justify-content: center;
   height: 36px;
-  border-radius: 8px;
-  border: 2px dashed #ddd;
+  border-radius: var(--ws-radius-sm);
+  border: 2px dashed var(--ws-border);
   cursor: pointer;
-  transition: transform 0.1s, border-color 0.1s;
+  transition: transform 0.12s, border-color 0.12s, box-shadow 0.12s;
   overflow: hidden;
 }
 
 .quick-color-slot.empty {
-  background: #fafafa;
+  background: var(--ws-surface-raised);
 }
 
 .quick-color-slot.empty:hover {
-  border-color: #2080f0;
-  background: #f0f7ff;
+  border-color: var(--ws-primary);
+  background: var(--ws-primary-soft);
 }
 
 .quick-color-slot:not(.empty) {
@@ -195,8 +209,8 @@ function onQuickColorContextMenu(index: number, colorId: string | null, e: Mouse
 }
 
 .quick-color-slot.selected {
-  border-color: #2080f0;
-  box-shadow: 0 0 0 2px rgba(32, 128, 240, 0.3);
+  border-color: var(--ws-primary);
+  box-shadow: 0 0 0 2px var(--ws-primary-ring);
 }
 
 .quick-color-add {

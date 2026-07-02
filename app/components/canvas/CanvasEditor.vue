@@ -14,7 +14,7 @@ const canvasStore = useCanvasStore()
 const paletteStore = usePaletteStore()
 const settingsStore = useSettingsStore()
 const { onPointerDown, onPointerMove, onPointerUp } = useTools()
-const { onZoom, onPanStart, onPanMove } = useCanvas()
+const { onZoom, onPanStart, onPanMove, centerFixedView } = useCanvas()
 const { registerRenderer, registerCellChange, registerDrawEnd } = useCanvasRenderer()
 const { scheduleSave } = useDraft()
 
@@ -63,8 +63,7 @@ function drawPattern() {
   }
 
   const ctx = canvas.getContext('2d')!
-  ctx.fillStyle = '#e8eaed'
-  ctx.fillRect(0, 0, cw, ch)
+  ctx.clearRect(0, 0, cw, ch)
   renderer.drawTo(ctx, transform.offsetX, transform.offsetY, cellSize)
 
   if (settingsStore.showColorLabels) {
@@ -131,6 +130,15 @@ function scheduleGridDraw() {
   gridRafId = requestAnimationFrame(drawGrid)
 }
 
+function applyFixedView() {
+  if (!settingsStore.canvasFixed) return
+  const container = containerRef.value
+  if (!container) return
+  centerFixedView(container.clientWidth, container.clientHeight)
+  schedulePatternDraw()
+  scheduleGridDraw()
+}
+
 registerCellChange((cells) => {
   ensureRenderer()
   renderer?.updateCells(cells)
@@ -167,11 +175,25 @@ watch(
   },
 )
 
+watch(
+  () => [
+    settingsStore.canvasFixed,
+    canvasStore.grid.width,
+    canvasStore.grid.height,
+    canvasStore.transform.cellPixelSize,
+  ],
+  () => {
+    applyFixedView()
+  },
+)
+
 onMounted(() => {
   ensureRenderer()
+  applyFixedView()
   schedulePatternDraw()
   scheduleGridDraw()
   window.addEventListener('resize', () => {
+    applyFixedView()
     schedulePatternDraw()
     scheduleGridDraw()
   })
@@ -207,13 +229,27 @@ function handlePointerUp() {
   canvasStore.setDrawing(false)
   schedulePatternDraw()
 }
+
+const zoomPercent = computed(() =>
+  Math.round(canvasStore.transform.scale * 100),
+)
+
+const gridLabel = computed(() =>
+  `${canvasStore.grid.width}×${canvasStore.grid.height}`,
+)
+
+const beadCount = computed(() => canvasStore.totalBeads)
+
+const selectedColorLabel = computed(() =>
+  canvasStore.selectedColorId ?? '—',
+)
 </script>
 
 <template>
   <div
     ref="containerRef"
     class="canvas-area"
-    :class="{ panning: !!panState }"
+    :class="{ panning: !!panState, 'canvas-fixed': settingsStore.canvasFixed }"
     @contextmenu.prevent
   >
     <canvas
@@ -229,12 +265,49 @@ function handlePointerUp() {
       ref="gridCanvasRef"
       class="canvas-layer grid-layer"
     />
+
+    <div class="canvas-statusbar">
+      <div class="status-group">
+        <span class="status-item">
+          <span class="status-label">尺寸</span>
+          <span class="status-value">{{ gridLabel }}</span>
+        </span>
+        <span class="status-dot" />
+        <span class="status-item">
+          <span class="status-label">缩放</span>
+          <span class="status-value">{{ zoomPercent }}%</span>
+        </span>
+        <span class="status-dot" />
+        <span class="status-item">
+          <span class="status-label">豆子</span>
+          <span class="status-value">{{ beadCount }}</span>
+        </span>
+      </div>
+      <div class="status-group">
+        <span class="status-item">
+          <span class="status-label">当前色</span>
+          <span
+            class="status-color"
+            :style="{ background: canvasStore.selectedColorId ? paletteStore.matcher.getHex(canvasStore.selectedColorId) : '#e2e6ed' }"
+          />
+          <span class="status-value">{{ selectedColorLabel }}</span>
+        </span>
+      </div>
+    </div>
   </div>
 </template>
 
 <style scoped>
 .canvas-area {
   position: relative;
+}
+
+.canvas-area.canvas-fixed {
+  cursor: default;
+}
+
+.canvas-area.canvas-fixed .canvas-layer {
+  cursor: crosshair;
 }
 
 .canvas-layer {
@@ -247,5 +320,63 @@ function handlePointerUp() {
 
 .grid-layer {
   pointer-events: none;
+}
+
+.canvas-statusbar {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 14px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--ws-border);
+  border-radius: var(--ws-radius-sm);
+  box-shadow: var(--ws-shadow-md);
+  pointer-events: none;
+  font-size: 12px;
+  z-index: 2;
+}
+
+.status-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.status-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.status-label {
+  color: var(--ws-text-muted);
+  font-size: 11px;
+}
+
+.status-value {
+  color: var(--ws-text);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.status-dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--ws-border);
+}
+
+.status-color {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  flex-shrink: 0;
 }
 </style>

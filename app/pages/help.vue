@@ -1,10 +1,17 @@
 <script setup lang="ts">
 import { NCard, NUl, NLi, NButton } from 'naive-ui'
+
+const pageRef = ref<HTMLElement | null>(null)
+const { pageEnter } = useGsapMotion()
+
+onMounted(() => {
+  if (pageRef.value) pageEnter(pageRef.value)
+})
 </script>
 
 <template>
-  <div class="help-page">
-    <header class="help-header">
+  <div ref="pageRef" class="help-page">
+    <header class="help-header page-header">
       <NuxtLink to="/">
         <NButton quaternary>
           ← 返回工作台
@@ -13,7 +20,7 @@ import { NCard, NUl, NLi, NButton } from 'naive-ui'
       <h1>使用帮助</h1>
     </header>
 
-    <main class="help-content">
+    <main class="help-content page-main">
       <NCard title="快速开始">
         <NUl>
           <NLi>点击「导入图片」上传 JPG/PNG 图片，系统自动转为拼豆图纸</NLi>

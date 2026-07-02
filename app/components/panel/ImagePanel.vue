@@ -32,7 +32,6 @@ const { lastStats } = useImagePipeline()
         :value="settingsStore.imageParams.removeBackground"
         @update:value="(v: boolean) => settingsStore.setImageParams({ removeBackground: v })"
       />
-      <span style="margin-left: 8px; font-size: 13px; color: #666">边界洪水填充算法</span>
     </div>
 
     <div v-if="settingsStore.imageParams.removeBackground" class="panel-section">

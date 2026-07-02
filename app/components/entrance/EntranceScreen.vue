@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { gsap } from 'gsap'
+import { useGSAP } from '~/composables/useGSAP'
 
 const emit = defineEmits<{ complete: [] }>()
+const { gsap } = useGSAP()
 
 const ENTRANCE_KEY = 'ppd-entrance-seen-v1'
 

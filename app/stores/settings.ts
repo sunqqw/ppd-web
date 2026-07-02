@@ -14,6 +14,7 @@ interface UiSettings {
   sidePanelCollapsed: boolean
   showQuickColors: boolean
   quickColors: (string | null)[]
+  canvasFixed: boolean
 }
 
 function defaultQuickColors(): (string | null)[] {
@@ -58,6 +59,7 @@ export const useSettingsStore = defineStore('settings', {
     tool: 'brush' as ToolType,
     brushSize: 1,
     isPanning: false,
+    canvasFixed: savedUi.canvasFixed ?? true,
     sidePanelCollapsed: savedUi.sidePanelCollapsed ?? false,
     showQuickColors: savedUi.showQuickColors ?? true,
     quickColors: savedUi.quickColors ?? defaultQuickColors(),
@@ -78,6 +80,16 @@ export const useSettingsStore = defineStore('settings', {
 
     toggleColorLabels() {
       this.showColorLabels = !this.showColorLabels
+    },
+
+    toggleCanvasFixed() {
+      this.canvasFixed = !this.canvasFixed
+      this.saveUiSettings()
+    },
+
+    setCanvasFixed(fixed: boolean) {
+      this.canvasFixed = fixed
+      this.saveUiSettings()
     },
 
     toggleSidePanel() {
@@ -111,6 +123,7 @@ export const useSettingsStore = defineStore('settings', {
         sidePanelCollapsed: this.sidePanelCollapsed,
         showQuickColors: this.showQuickColors,
         quickColors: [...this.quickColors],
+        canvasFixed: this.canvasFixed,
       })
     },
   },

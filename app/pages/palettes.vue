@@ -175,11 +175,23 @@ function usePalette(id: string) {
 function formatDate(ts: number) {
   return new Date(ts).toLocaleString('zh-CN')
 }
+
+const pageRef = ref<HTMLElement | null>(null)
+const { pageEnter, colorSelectPulse } = useGsapMotion()
+
+function onColorToggle(colorId: string, el: Event) {
+  toggleColor(colorId)
+  colorSelectPulse(el.currentTarget as Element)
+}
+
+onMounted(() => {
+  if (pageRef.value) pageEnter(pageRef.value)
+})
 </script>
 
 <template>
-  <div class="palettes-page">
-    <header class="palettes-header">
+  <div ref="pageRef" class="palettes-page">
+    <header class="palettes-header page-header">
       <NuxtLink to="/">
         <NButton quaternary>
           ← 返回工作台
@@ -191,7 +203,7 @@ function formatDate(ts: number) {
       </NButton>
     </header>
 
-    <main class="palettes-main">
+    <main class="palettes-main page-main">
       <aside class="palettes-list">
         <NCard title="我的色号库" size="small">
           <NEmpty v-if="customPaletteStore.items.length === 0" description="还没有自定义色号库" />
@@ -302,7 +314,7 @@ function formatDate(ts: number) {
                     :class="{ selected: isSelected(color.id) }"
                     :style="{ background: color.hex }"
                     :title="color.id"
-                    @click="toggleColor(color.id)"
+                    @click="onColorToggle(color.id, $event)"
                   >
                     <span
                       class="color-swatch-label"
