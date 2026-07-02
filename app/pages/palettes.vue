@@ -228,7 +228,11 @@ function formatDate(ts: number) {
       </aside>
 
       <section class="palettes-editor">
-        <NCard :title="editingId ? '编辑色号库' : '新建色号库'" size="small">
+        <NCard
+          class="editor-card"
+          :title="editingId ? '编辑色号库' : '新建色号库'"
+          size="small"
+        >
           <div class="form-row">
             <label>名称</label>
             <NInput
@@ -251,7 +255,7 @@ function formatDate(ts: number) {
             </NText>
           </div>
 
-          <div class="form-row">
+          <div class="form-row form-row--grow">
             <div class="form-row-header">
               <label>选择你拥有的豆子</label>
               <NSpace :size="8">
@@ -329,15 +333,19 @@ function formatDate(ts: number) {
 
 <style scoped>
 .palettes-page {
-  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
   background: #f5f6f8;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .palettes-header {
   display: flex;
   align-items: center;
   gap: 16px;
+  flex-shrink: 0;
   padding: 16px 24px;
   background: #fff;
   border-bottom: 1px solid #e8e8e8;
@@ -352,15 +360,59 @@ function formatDate(ts: number) {
 .palettes-main {
   display: grid;
   grid-template-columns: 280px 1fr;
+  grid-template-rows: minmax(0, 1fr);
   gap: 16px;
+  flex: 1;
+  min-height: 0;
   max-width: 1200px;
-  margin: 24px auto;
-  padding: 0 16px 40px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+.palettes-list,
+.palettes-editor {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.palettes-list :deep(.n-card),
+.editor-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.palettes-list :deep(.n-card__content) {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.editor-card :deep(.n-card-header) {
+  flex-shrink: 0;
+}
+
+.editor-card :deep(.n-card__content) {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.editor-card :deep(.n-card__footer) {
+  flex-shrink: 0;
 }
 
 @media (max-width: 900px) {
   .palettes-main {
     grid-template-columns: 1fr;
+    grid-template-rows: auto minmax(0, 1fr);
+  }
+
+  .palettes-list {
+    max-height: 240px;
   }
 }
 
@@ -423,10 +475,11 @@ function formatDate(ts: number) {
   margin-bottom: 0;
 }
 
+.form-row--grow {
+  margin-bottom: 0;
+}
+
 .color-sections {
-  max-height: calc(100vh - 420px);
-  min-height: 200px;
-  overflow-y: auto;
   border: 1px solid #eee;
   border-radius: 8px;
   padding: 12px;

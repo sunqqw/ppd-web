@@ -2,6 +2,7 @@
 import { useSettingsStore, type ToolType } from '~/stores/settings'
 import { useCanvasStore } from '~/stores/canvas'
 import { usePaletteStore } from '~/stores/palette'
+import QuickColorBar from '~/components/layout/QuickColorBar.vue'
 
 const settingsStore = useSettingsStore()
 const canvasStore = useCanvasStore()
@@ -24,6 +25,7 @@ const currentColor = computed(() => {
 <template>
   <aside class="toolbar">
     <div class="current-color" :style="{ background: currentColor }" :title="canvasStore.selectedColorId ?? '未选色'" />
+    <QuickColorBar />
     <div class="tool-divider" />
     <button
       v-for="tool in tools"

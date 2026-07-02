@@ -26,7 +26,7 @@ export interface ImagePipelineParams {
 export const DEFAULT_IMAGE_PARAMS: ImagePipelineParams = {
   detail: 50,
   removeBackground: true,
-  bgTolerance: 30,
+  bgTolerance: 0,
   mergeThreshold: 15,
   minRegionSize: 2,
 }
