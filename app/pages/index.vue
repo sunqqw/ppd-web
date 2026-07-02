@@ -18,7 +18,7 @@ import { useDraft } from '~/composables/useDraft'
 import { useCanvasStore } from '~/stores/canvas'
 import { usePaletteStore } from '~/stores/palette'
 
-const { importFromFile, processing, progress } = useImagePipeline()
+const { importFromFile, loadImageToCanvas, calcImportGridSize, processing, progress } = useImagePipeline()
 const { load, restore, hasDraft, scheduleSave } = useDraft()
 const canvasStore = useCanvasStore()
 const paletteStore = usePaletteStore()
@@ -30,10 +30,18 @@ const showExportBom = ref(false)
 const showImportPreview = ref(false)
 const pendingFile = ref<File | null>(null)
 const previewUrl = ref('')
+const importGridSize = ref({ width: 50, height: 50 })
 
 async function handleImport(file: File) {
   pendingFile.value = file
   previewUrl.value = URL.createObjectURL(file)
+  try {
+    const img = await loadImageToCanvas(file)
+    importGridSize.value = calcImportGridSize(img.naturalWidth, img.naturalHeight)
+  }
+  catch {
+    importGridSize.value = calcImportGridSize(1, 1)
+  }
   showImportPreview.value = true
 }
 
@@ -99,7 +107,7 @@ onMounted(() => {
         <img :src="previewUrl" alt="预览">
       </div>
       <p style="font-size: 13px; color: #666; margin-top: 12px">
-        将按当前设置（{{ canvasStore.grid.width }}×{{ canvasStore.grid.height }}，{{ paletteStore.activePalette.name }}）进行智能转图
+        将按原图宽高比生成 {{ importGridSize.width }}×{{ importGridSize.height }} 图纸（{{ paletteStore.activePalette.name }}）
       </p>
       <template #footer>
         <NSpace justify="end">

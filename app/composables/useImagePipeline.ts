@@ -7,6 +7,7 @@ import type { ImagePipelineParams } from '../../lib/types/grid'
 import type { PaletteColor } from '../../lib/types/palette'
 import type { ProcessImageResult } from '../../lib/image/pipeline'
 import { applyMergeToGrid, imageDataToPlain } from '../../lib/image/pipeline'
+import { calcGridSizePreservingAspectRatio } from '../../lib/image/aspect-ratio'
 
 export function useImagePipeline() {
   const canvasStore = useCanvasStore()
@@ -70,9 +71,11 @@ export function useImagePipeline() {
   async function processImage(
     imageData: ImageData,
     params?: Partial<ImagePipelineParams>,
+    targetSize?: { width: number, height: number },
   ): Promise<ProcessImageResult> {
     const mergedParams = cloneParams({ ...settingsStore.imageParams, ...params })
-    const { width, height } = canvasStore.grid
+    const width = targetSize?.width ?? canvasStore.grid.width
+    const height = targetSize?.height ?? canvasStore.grid.height
     const imagePlain = imageDataToPlain(imageData)
 
     processing.value = true
@@ -114,15 +117,27 @@ export function useImagePipeline() {
     })
   }
 
+  function calcImportGridSize(
+    imageWidth: number,
+    imageHeight: number,
+    refWidth = canvasStore.grid.width,
+    refHeight = canvasStore.grid.height,
+  ) {
+    return calcGridSizePreservingAspectRatio(imageWidth, imageHeight, refWidth, refHeight)
+  }
+
   async function importFromFile(file: File, crop?: { x: number, y: number, w: number, h: number }) {
     const img = await loadImageToCanvas(file)
     const imageData = imageToImageData(img, crop)
-    const result = await processImage(imageData)
+    const srcW = crop?.w ?? img.naturalWidth
+    const srcH = crop?.h ?? img.naturalHeight
+    const { width, height } = calcImportGridSize(srcW, srcH)
+    const result = await processImage(imageData, undefined, { width, height })
 
     historyStore.push(canvasStore.grid, '导入前')
     canvasStore.setGrid({
-      width: canvasStore.grid.width,
-      height: canvasStore.grid.height,
+      width,
+      height,
       cells: result.cells.map(c => ({ colorId: c.colorId })),
     })
     lastStats.value = result.stats
@@ -148,6 +163,7 @@ export function useImagePipeline() {
     imageToImageData,
     processImage,
     importFromFile,
+    calcImportGridSize,
     applyMerge,
   }
 }
