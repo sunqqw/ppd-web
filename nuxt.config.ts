@@ -12,7 +12,7 @@ export default defineNuxtConfig({
       format: 'es',
     },
     optimizeDeps: {
-      include: ['naive-ui', 'vueuc', 'date-fns-tz/esm/formatInTimeZone'],
+      include: ['naive-ui', 'vueuc', 'date-fns-tz/esm/formatInTimeZone', 'gsap'],
     },
   },
   build: {

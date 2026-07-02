@@ -39,14 +39,17 @@ function getHex(colorId: string | null) {
   return paletteStore.matcher.getHex(colorId)
 }
 
-function onQuickColorClick(index: number, colorId: string | null) {
-  if (colorId) {
-    canvasStore.setSelectedColor(colorId)
+function onQuickColorClick(index: number, colorId: string | null, e: MouseEvent) {
+  const selected = canvasStore.selectedColorId
+  if (!colorId) {
+    if (selected) settingsStore.setQuickColor(index, selected)
     return
   }
-  if (canvasStore.selectedColorId) {
-    settingsStore.setQuickColor(index, canvasStore.selectedColorId)
+  if (selected && (e.altKey || selected !== colorId)) {
+    settingsStore.setQuickColor(index, selected)
+    return
   }
+  canvasStore.setSelectedColor(colorId)
 }
 
 function onQuickColorContextMenu(index: number, colorId: string | null, e: MouseEvent) {
@@ -78,7 +81,7 @@ function onQuickColorContextMenu(index: number, colorId: string | null, e: Mouse
         快捷色号（{{ QUICK_COLOR_SLOTS }}）
       </div>
       <p class="quick-colors-hint">
-        点击空位添加当前选中色，点击色块选用，右键清除
+        选中色号后点击空位添加、点击已有色块替换，右键清除
       </p>
       <div class="quick-colors-grid">
         <button
@@ -87,8 +90,8 @@ function onQuickColorContextMenu(index: number, colorId: string | null, e: Mouse
           class="quick-color-slot"
           :class="{ empty: !colorId, selected: colorId && canvasStore.selectedColorId === colorId }"
           :style="colorId ? { background: getHex(colorId) ?? '#ccc' } : undefined"
-          :title="colorId ? `${colorId}（右键清除）` : '点击添加当前选中色'"
-          @click="onQuickColorClick(index, colorId)"
+          :title="colorId ? `${colorId}（选中其他色后点击替换，右键清除）` : '点击添加当前选中色'"
+          @click="onQuickColorClick(index, colorId, $event)"
           @contextmenu="onQuickColorContextMenu(index, colorId, $event)"
         >
           <span v-if="!colorId" class="quick-color-add">+</span>

@@ -17,7 +17,17 @@ function labelColor(hex: string) {
   return isLightColor(hex) ? '#333' : '#fff'
 }
 
-function selectColor(colorId: string) {
+function onQuickColorClick(index: number, colorId: string | null, e: MouseEvent) {
+  if (!colorId) {
+    if (canvasStore.selectedColorId) {
+      settingsStore.setQuickColor(index, canvasStore.selectedColorId)
+    }
+    return
+  }
+  if (e.altKey && canvasStore.selectedColorId) {
+    settingsStore.setQuickColor(index, canvasStore.selectedColorId)
+    return
+  }
   canvasStore.setSelectedColor(colorId)
 }
 </script>
@@ -30,9 +40,8 @@ function selectColor(colorId: string) {
       class="quick-color-slot"
       :class="{ empty: !colorId, selected: colorId && canvasStore.selectedColorId === colorId }"
       :style="colorId ? { background: getHex(colorId) ?? '#ccc' } : undefined"
-      :title="colorId ?? '未设置'"
-      :disabled="!colorId"
-      @click="colorId && selectColor(colorId)"
+      :title="colorId ? `${colorId}（Alt+点击替换）` : (canvasStore.selectedColorId ? '点击添加当前选中色' : '未设置')"
+      @click="onQuickColorClick(index, colorId, $event)"
     >
       <span
         v-if="colorId"
@@ -67,8 +76,13 @@ function selectColor(colorId: string) {
 
 .quick-color-slot.empty {
   background: #f5f5f5;
-  cursor: default;
-  opacity: 0.5;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.quick-color-slot.empty:hover {
+  opacity: 1;
+  border-color: #2080f0;
 }
 
 .quick-color-slot:not(.empty):hover {

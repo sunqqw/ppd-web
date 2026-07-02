@@ -25,6 +25,8 @@ const paletteStore = usePaletteStore()
 const message = useMessage()
 const dialog = useDialog()
 
+const { showEntrance, workspaceReady, checkEntrance, onEntranceComplete } = useEntrance()
+
 const showExportDrawing = ref(false)
 const showExportBom = ref(false)
 const showImportPreview = ref(false)
@@ -66,7 +68,7 @@ watch(
   () => scheduleSave(),
 )
 
-onMounted(() => {
+function initWorkspace() {
   if (hasDraft()) {
     const draft = load()
     if (draft) {
@@ -84,13 +86,28 @@ onMounted(() => {
   }
 
   if (!canvasStore.selectedColorId && paletteStore.activePalette.colors.length > 0) {
-    canvasStore.setSelectedColor(paletteStore.activePalette.colors[0].id)
+    const first = paletteStore.activePalette.colors[0]
+    if (first) canvasStore.setSelectedColor(first.id)
+  }
+}
+
+function handleEntranceComplete() {
+  onEntranceComplete()
+  initWorkspace()
+}
+
+onMounted(() => {
+  checkEntrance()
+  if (!showEntrance.value) {
+    initWorkspace()
   }
 })
 </script>
 
 <template>
-  <div class="workspace">
+  <EntranceScreen v-if="showEntrance" @complete="handleEntranceComplete" />
+
+  <div class="workspace" :class="{ 'workspace--hidden': showEntrance && !workspaceReady }">
     <AppHeader
       @import-image="handleImport"
       @export-drawing="showExportDrawing = true"
@@ -135,6 +152,11 @@ onMounted(() => {
 </template>
 
 <style scoped>
+.workspace--hidden {
+  visibility: hidden;
+  pointer-events: none;
+}
+
 .import-preview {
   text-align: center;
   max-height: 300px;
