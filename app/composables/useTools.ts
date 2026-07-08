@@ -6,7 +6,7 @@ import { useCanvasRenderer } from '~/composables/useCanvasRenderer'
 import { screenToGrid } from '../../lib/grid/grid-utils'
 import { floodFillGrid } from '../../lib/grid/grid-ops'
 import { bresenhamLine, brushStamp } from '../../lib/grid/line-draw'
-import { gridIndex, isInGrid } from '../../lib/types/grid'
+import { gridIndex } from '../../lib/types/grid'
 
 export function useTools() {
   const canvasStore = useCanvasStore()
@@ -25,16 +25,7 @@ export function useTools() {
   }
 
   function applyCells(cells: { x: number, y: number, colorId: string | null }[]) {
-    const changed: { x: number, y: number, colorId: string | null }[] = []
-    const grid = canvasStore.grid
-
-    for (const { x, y, colorId } of cells) {
-      if (!isInGrid(x, y, grid)) continue
-      const idx = gridIndex(x, y, grid.width)
-      if (grid.cells[idx].colorId === colorId) continue
-      grid.cells[idx].colorId = colorId
-      changed.push({ x, y, colorId })
-    }
+    const changed = canvasStore.applyCellChanges(cells)
 
     if (changed.length > 0) {
       notifyCellChange(changed)
@@ -81,6 +72,7 @@ export function useTools() {
       saveHistory('填充')
       const target = canvasStore.grid.cells[gridIndex(pos.x, pos.y, canvasStore.grid.width)].colorId
       const changed = floodFillGrid(canvasStore.grid, pos.x, pos.y, target, canvasStore.selectedColorId)
+      canvasStore.syncTotalBeads()
       notifyCellChange(changed.map(p => ({ ...p, colorId: canvasStore.selectedColorId })))
       canvasStore.bumpRevision()
       notifyDrawEnd()

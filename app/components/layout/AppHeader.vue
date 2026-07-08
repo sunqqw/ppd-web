@@ -212,4 +212,52 @@ function handleUpload({ file }: { file: { file: File | null } }) {
     display: none;
   }
 }
+
+@media (max-width: 700px) {
+  .app-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    height: auto;
+    padding: 10px 12px;
+  }
+
+  .app-header-brand,
+  .brand-link {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .brand-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+  }
+
+  .brand-name {
+    font-size: 14px;
+  }
+
+  .app-header-actions {
+    width: 100%;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 2px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .action-group {
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-header-actions {
+    gap: 6px;
+  }
+
+  .action-divider {
+    display: none;
+  }
+}
 </style>

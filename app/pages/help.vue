@@ -113,4 +113,31 @@ onMounted(() => {
   font-size: 14px;
   color: #666;
 }
+
+@media (max-width: 640px) {
+  .help-page {
+    min-height: var(--ws-viewport-h);
+  }
+
+  .help-header {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .help-header h1 {
+    flex-basis: 100%;
+    font-size: 18px;
+  }
+
+  .help-content {
+    margin: 14px auto;
+    padding: 0 12px 28px;
+  }
+
+  .pipeline,
+  .note {
+    font-size: 13px;
+  }
+}
 </style>

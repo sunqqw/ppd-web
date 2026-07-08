@@ -187,21 +187,24 @@ watch(
   },
 )
 
+function handleWindowResize() {
+  applyFixedView()
+  schedulePatternDraw()
+  scheduleGridDraw()
+}
+
 onMounted(() => {
   ensureRenderer()
   applyFixedView()
   schedulePatternDraw()
   scheduleGridDraw()
-  window.addEventListener('resize', () => {
-    applyFixedView()
-    schedulePatternDraw()
-    scheduleGridDraw()
-  })
+  window.addEventListener('resize', handleWindowResize)
 })
 
 onUnmounted(() => {
   cancelAnimationFrame(rafId)
   cancelAnimationFrame(gridRafId)
+  window.removeEventListener('resize', handleWindowResize)
 })
 
 function handlePointerDown(e: PointerEvent) {
@@ -378,5 +381,40 @@ const selectedColorLabel = computed(() =>
   border-radius: 4px;
   border: 1px solid rgba(0, 0, 0, 0.08);
   flex-shrink: 0;
+}
+
+@media (max-width: 700px) {
+  .canvas-area {
+    order: 1;
+    min-height: 0;
+  }
+
+  .canvas-statusbar {
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    flex-wrap: wrap;
+    gap: 6px 10px;
+    padding: 7px 10px;
+    font-size: 11px;
+  }
+
+  .status-group {
+    gap: 8px;
+  }
+
+  .status-label {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .canvas-statusbar {
+    justify-content: center;
+  }
+
+  .status-group:last-child {
+    display: none;
+  }
 }
 </style>

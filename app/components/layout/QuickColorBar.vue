@@ -111,4 +111,16 @@ function onQuickColorClickWithMotion(index: number, colorId: string | null, e: M
   pointer-events: none;
   user-select: none;
 }
+
+@media (max-width: 700px) {
+  .quick-color-bar {
+    flex-direction: row;
+    margin-bottom: 0;
+  }
+
+  .quick-color-slot {
+    width: 36px;
+    height: 36px;
+  }
+}
 </style>

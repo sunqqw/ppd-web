@@ -218,4 +218,23 @@ function onQuickColorClickWithPulse(index: number, colorId: string | null, e: Mo
   color: #bbb;
   line-height: 1;
 }
+
+@media (max-width: 700px) {
+  .color-panel {
+    max-height: none;
+  }
+
+  .quick-colors-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .color-grid {
+    gap: 5px;
+  }
+
+  .color-swatch {
+    width: 34px;
+    height: 34px;
+  }
+}
 </style>

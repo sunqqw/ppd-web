@@ -25,9 +25,10 @@ export function floodFillGrid(
   const changed: { x: number, y: number }[] = []
   const queue: { x: number, y: number }[] = [{ x: startX, y: startY }]
   const visited = new Set<number>()
+  let head = 0
 
-  while (queue.length > 0) {
-    const { x, y } = queue.shift()!
+  while (head < queue.length) {
+    const { x, y } = queue[head++]
     const idx = gridIndex(x, y, grid.width)
     if (visited.has(idx)) continue
     const cell = grid.cells[idx]

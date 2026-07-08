@@ -29,6 +29,14 @@
   --ws-panel-w: 288px;
   --ws-canvas-bg: #dfe3ea;
   --ws-canvas-dot: #cdd2db;
+  --ws-safe-bottom: env(safe-area-inset-bottom, 0px);
+  --ws-viewport-h: 100vh;
+}
+
+@supports (height: 100dvh) {
+  :root {
+    --ws-viewport-h: 100dvh;
+  }
 }
 
 html,
@@ -57,7 +65,7 @@ a {
 .workspace {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: var(--ws-viewport-h);
   overflow: hidden;
   background: var(--ws-bg);
 }
@@ -86,6 +94,30 @@ a {
 
 .canvas-area.panning {
   cursor: grab;
+}
+
+@media (max-width: 700px) {
+  :root {
+    --ws-header-h: auto;
+    --ws-toolbar-w: 100%;
+  }
+
+  html,
+  body,
+  #__nuxt {
+    min-width: 320px;
+  }
+
+  .workspace-main {
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+    padding-bottom: calc(8px + var(--ws-safe-bottom));
+  }
+
+  .canvas-area {
+    min-height: 260px;
+  }
 }
 
 .tool-btn {

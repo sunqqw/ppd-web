@@ -53,7 +53,7 @@ async function onExport() {
 </script>
 
 <template>
-  <NModal v-model:show="show" preset="card" title="导出采购清单" style="width: 520px">
+  <NModal v-model:show="show" preset="card" title="导出采购清单" class="export-bom-modal" style="width: 520px">
     <NSpace vertical :size="12">
       <div>
         <div style="font-size: 13px; margin-bottom: 6px; color: #666">
@@ -88,3 +88,11 @@ async function onExport() {
     </template>
   </NModal>
 </template>
+
+<style scoped>
+@media (max-width: 640px) {
+  :global(.export-bom-modal) {
+    max-width: calc(100vw - 24px);
+  }
+}
+</style>

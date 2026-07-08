@@ -218,4 +218,64 @@ onMounted(() => {
 .brush-range {
   margin: 2px 0;
 }
+
+@media (max-width: 700px) {
+  .toolbar {
+    order: 2;
+    flex-direction: row;
+    align-items: stretch;
+    width: 100%;
+    max-width: 100%;
+    padding: 8px;
+    gap: 8px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .toolbar-section {
+    flex-direction: row;
+    flex-shrink: 0;
+    width: auto;
+  }
+
+  .toolbar-label {
+    display: none;
+  }
+
+  .current-color {
+    width: 40px;
+    height: 40px;
+  }
+
+  .tool-divider {
+    width: 1px;
+    height: 40px;
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+  .brush-section {
+    min-width: 124px;
+    padding: 0;
+  }
+
+  .brush-range {
+    width: 96px;
+    height: 4px;
+    margin: 0 6px;
+    writing-mode: horizontal-tb;
+    direction: ltr;
+  }
+}
+
+@media (max-width: 480px) {
+  .toolbar {
+    gap: 6px;
+  }
+
+  .current-color {
+    width: 38px;
+    height: 38px;
+  }
+}
 </style>

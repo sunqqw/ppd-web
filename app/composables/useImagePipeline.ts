@@ -9,6 +9,14 @@ import type { ProcessImageResult } from '../../lib/image/pipeline'
 import { applyMergeToGrid, imageDataToPlain } from '../../lib/image/pipeline'
 import { calcGridSizePreservingAspectRatio } from '../../lib/image/aspect-ratio'
 
+export interface ImportOptions {
+  crop?: { x: number, y: number, w: number, h: number }
+  targetSize?: { width: number, height: number }
+  params?: Partial<ImagePipelineParams>
+  /** 确认导入后是否写回全局转图参数 */
+  syncParamsToSettings?: boolean
+}
+
 export function useImagePipeline() {
   const canvasStore = useCanvasStore()
   const paletteStore = usePaletteStore()
@@ -126,13 +134,18 @@ export function useImagePipeline() {
     return calcGridSizePreservingAspectRatio(imageWidth, imageHeight, refWidth, refHeight)
   }
 
-  async function importFromFile(file: File, crop?: { x: number, y: number, w: number, h: number }) {
+  async function importFromFile(file: File, options?: ImportOptions) {
+    const crop = options?.crop
     const img = await loadImageToCanvas(file)
     const imageData = imageToImageData(img, crop)
     const srcW = crop?.w ?? img.naturalWidth
     const srcH = crop?.h ?? img.naturalHeight
-    const { width, height } = calcImportGridSize(srcW, srcH)
-    const result = await processImage(imageData, undefined, { width, height })
+    const { width, height } = options?.targetSize ?? calcImportGridSize(srcW, srcH)
+    const result = await processImage(imageData, options?.params, { width, height })
+
+    if (options?.syncParamsToSettings && options.params) {
+      settingsStore.setImageParams(options.params)
+    }
 
     historyStore.push(canvasStore.grid, '导入前')
     canvasStore.setGrid({

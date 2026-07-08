@@ -91,7 +91,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <NModal v-model:show="show" preset="card" title="导出图纸" style="width: 560px">
+  <NModal v-model:show="show" preset="card" title="导出图纸" class="export-drawing-modal" style="width: 560px">
     <div class="export-layout">
       <div class="export-preview">
         <NSpin :show="previewLoading" size="small">
@@ -201,5 +201,23 @@ onUnmounted(() => {
   font-size: 13px;
   margin-bottom: 6px;
   color: #666;
+}
+
+@media (max-width: 640px) {
+  :global(.export-drawing-modal) {
+    max-width: calc(100vw - 24px);
+  }
+
+  .export-layout {
+    flex-direction: column;
+  }
+
+  .export-preview {
+    max-height: 240px;
+  }
+
+  .export-options {
+    width: 100%;
+  }
 }
 </style>

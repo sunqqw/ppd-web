@@ -267,4 +267,51 @@ onMounted(() => {
 .side-panel-body :deep(.n-tabs-nav) {
   padding-top: 4px;
 }
+
+@media (max-width: 700px) {
+  .side-panel {
+    position: static;
+    order: 3;
+    width: 100% !important;
+    max-height: 34vh;
+    min-height: 172px;
+    border-radius: var(--ws-radius);
+  }
+
+  .side-panel.collapsed {
+    width: 100% !important;
+    min-height: 56px;
+    max-height: 56px;
+  }
+
+  .side-panel-header {
+    min-height: 42px;
+    padding: 8px 10px;
+  }
+
+  .side-panel-title-sub {
+    display: none;
+  }
+
+  .side-panel-rail {
+    flex-direction: row;
+    justify-content: center;
+    padding: 8px;
+  }
+
+  .rail-tab {
+    width: 42px;
+    height: 36px;
+  }
+
+  .side-panel-body {
+    padding: 0 10px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .side-panel {
+    max-height: 38vh;
+  }
+}
 </style>

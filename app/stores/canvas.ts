@@ -6,6 +6,20 @@ import {
   cloneGrid,
 } from '../../lib/types/grid'
 
+interface CellChange {
+  x: number
+  y: number
+  colorId: string | null
+}
+
+function countBeads(grid: GridState) {
+  let count = 0
+  for (const cell of grid.cells) {
+    if (cell.colorId !== null) count++
+  }
+  return count
+}
+
 export const useCanvasStore = defineStore('canvas', {
   state: () => ({
     grid: createEmptyGrid(50, 50) as GridState,
@@ -19,22 +33,19 @@ export const useCanvasStore = defineStore('canvas', {
     selection: null as { x1: number, y1: number, x2: number, y2: number } | null,
     gridRevision: 0,
     isDrawing: false,
+    totalBeads: 0,
   }),
-
-  getters: {
-    totalBeads: (state) => {
-      return state.grid.cells.filter(c => c.colorId !== null).length
-    },
-  },
 
   actions: {
     setGrid(grid: GridState) {
       this.grid = grid
+      this.totalBeads = countBeads(grid)
       this.gridRevision++
     },
 
     replaceGrid(grid: GridState) {
       this.grid = cloneGrid(grid)
+      this.totalBeads = countBeads(this.grid)
       this.gridRevision++
     },
 
@@ -48,19 +59,50 @@ export const useCanvasStore = defineStore('canvas', {
         }
       }
       this.grid = newGrid
+      this.totalBeads = countBeads(newGrid)
       this.gridRevision++
     },
 
     setCell(x: number, y: number, colorId: string | null) {
       const idx = y * this.grid.width + x
       if (idx >= 0 && idx < this.grid.cells.length) {
+        const previous = this.grid.cells[idx].colorId
+        if (previous === colorId) return
         this.grid.cells[idx].colorId = colorId
+        this.updateBeadDelta(previous, colorId)
       }
+    },
+
+    applyCellChanges(cells: CellChange[]) {
+      const changed: CellChange[] = []
+      const width = this.grid.width
+
+      for (const { x, y, colorId } of cells) {
+        if (x < 0 || y < 0 || x >= width || y >= this.grid.height) continue
+        const idx = y * width + x
+        const previous = this.grid.cells[idx].colorId
+        if (previous === colorId) continue
+        this.grid.cells[idx].colorId = colorId
+        this.updateBeadDelta(previous, colorId)
+        changed.push({ x, y, colorId })
+      }
+
+      return changed
     },
 
     clearGrid() {
       this.grid = createEmptyGrid(this.grid.width, this.grid.height)
+      this.totalBeads = 0
       this.gridRevision++
+    },
+
+    syncTotalBeads() {
+      this.totalBeads = countBeads(this.grid)
+    },
+
+    updateBeadDelta(previous: string | null, next: string | null) {
+      if (previous === null && next !== null) this.totalBeads++
+      else if (previous !== null && next === null) this.totalBeads--
     },
 
     setTransform(partial: Partial<ViewTransform>) {

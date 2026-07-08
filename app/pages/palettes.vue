@@ -14,12 +14,19 @@ import {
 import { usePaletteStore } from '~/stores/palette'
 import { useCustomPaletteStore } from '~/stores/customPalette'
 import { isLightColor } from '../../lib/color/rgb'
-import type { PaletteColor } from '../../lib/types/palette'
+import type { Palette, PaletteColor } from '../../lib/types/palette'
 
 const paletteStore = usePaletteStore()
 const customPaletteStore = useCustomPaletteStore()
 const message = useMessage()
 const dialog = useDialog()
+
+const EMPTY_BASE_PALETTE: Palette = {
+  key: '',
+  name: '',
+  info: '',
+  colors: [],
+}
 
 const editingId = ref<string | null>(null)
 const formName = ref('')
@@ -31,9 +38,10 @@ const basePaletteOptions = computed(() =>
   paletteStore.builtinPalettes.map(p => ({ label: p.name, value: p.key })),
 )
 
-const basePalette = computed(() =>
+const basePalette = computed<Palette>(() =>
   paletteStore.builtinPalettes.find(p => p.key === formBaseKey.value)
-  ?? paletteStore.builtinPalettes[0],
+  ?? paletteStore.builtinPalettes[0]
+  ?? EMPTY_BASE_PALETTE,
 )
 
 const groupedColors = computed(() => {
@@ -562,5 +570,91 @@ onMounted(() => {
   color: #2080f0;
   text-shadow: 0 0 2px #fff;
   pointer-events: none;
+}
+
+@media (max-width: 640px) {
+  .palettes-page {
+    height: var(--ws-viewport-h);
+  }
+
+  .palettes-header {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .palettes-header h1 {
+    order: -1;
+    flex-basis: 100%;
+    font-size: 18px;
+  }
+
+  .palettes-main {
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    min-height: auto;
+    padding: 14px 12px 24px;
+  }
+
+  .palettes-list,
+  .palettes-editor {
+    min-height: auto;
+    overflow: visible;
+  }
+
+  .palettes-list {
+    max-height: none;
+  }
+
+  .palettes-list :deep(.n-card),
+  .editor-card {
+    height: auto;
+  }
+
+  .palettes-list :deep(.n-card__content),
+  .editor-card :deep(.n-card__content) {
+    overflow: visible;
+  }
+
+  .palette-item-meta,
+  .form-row-header,
+  .color-section-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .form-row-header,
+  .color-section-header {
+    gap: 8px;
+  }
+
+  .color-sections {
+    padding: 10px;
+  }
+
+  .color-grid {
+    gap: 5px;
+  }
+
+  .color-swatch {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 420px) {
+  .palettes-header :deep(.n-button) {
+    padding: 0 10px;
+  }
+
+  .color-swatch {
+    width: 36px;
+    height: 36px;
+  }
+
+  .color-swatch-label {
+    font-size: 9px;
+  }
 }
 </style>
