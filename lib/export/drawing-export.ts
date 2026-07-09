@@ -3,6 +3,7 @@ import type { DrawingExportOptions } from '../types/export'
 import type { PaletteMatcher } from '../color/palette-matcher'
 import { gridIndex } from '../types/grid'
 import { drawColorLabels } from '../canvas/color-labels'
+import { drawCoordinateLabels } from '../canvas/coordinate-labels'
 
 export async function exportDrawing(
   grid: GridState,
@@ -13,9 +14,12 @@ export async function exportDrawing(
   const padding = 40 * options.scale
   const legendHeight = options.showLegend ? computeLegendHeight(grid, matcher, options.scale) : 0
   const labelHeight = options.showSizeLabel ? 30 * options.scale : 0
+  const coordBand = options.showCoordinates
+    ? Math.max(14 * options.scale, cellSize * 0.7)
+    : 0
 
-  const canvasW = grid.width * cellSize + padding * 2
-  const canvasH = grid.height * cellSize + padding * 2 + labelHeight + legendHeight
+  const canvasW = grid.width * cellSize + padding * 2 + coordBand * 2
+  const canvasH = grid.height * cellSize + padding * 2 + labelHeight + legendHeight + coordBand * 2
 
   const canvas = document.createElement('canvas')
   canvas.width = canvasW
@@ -25,8 +29,6 @@ export async function exportDrawing(
   ctx.fillStyle = '#ffffff'
   ctx.fillRect(0, 0, canvasW, canvasH)
 
-  let offsetY = padding + labelHeight
-
   if (options.showSizeLabel) {
     ctx.fillStyle = '#333'
     ctx.font = `${14 * options.scale}px sans-serif`
@@ -34,10 +36,13 @@ export async function exportDrawing(
     ctx.fillText(`${grid.width}×${grid.height}`, canvasW / 2, padding + 20 * options.scale)
   }
 
+  const offsetX = padding + coordBand
+  const offsetY = padding + labelHeight + coordBand
+
   for (let y = 0; y < grid.height; y++) {
     for (let x = 0; x < grid.width; x++) {
       const cell = grid.cells[gridIndex(x, y, grid.width)]
-      const px = padding + x * cellSize
+      const px = offsetX + x * cellSize
       const py = offsetY + y * cellSize
 
       if (cell.colorId) {
@@ -54,11 +59,22 @@ export async function exportDrawing(
   }
 
   if (options.showColorLabels) {
-    drawColorLabels(ctx, grid, id => matcher.getHex(id), padding, offsetY, cellSize, options.scale, 'cell')
+    drawColorLabels(ctx, grid, id => matcher.getHex(id), offsetX, offsetY, cellSize, options.scale, 'cell')
+  }
+
+  if (options.showCoordinates) {
+    drawCoordinateLabels(ctx, grid.width, grid.height, offsetX, offsetY, cellSize, options.scale)
   }
 
   if (options.showLegend) {
-    drawLegend(ctx, grid, matcher, padding, offsetY + grid.height * cellSize + 20 * options.scale, options.scale)
+    drawLegend(
+      ctx,
+      grid,
+      matcher,
+      padding,
+      offsetY + grid.height * cellSize + coordBand + 20 * options.scale,
+      options.scale,
+    )
   }
 
   return new Promise((resolve, reject) => {
