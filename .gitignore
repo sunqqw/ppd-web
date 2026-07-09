@@ -16,3 +16,7 @@ node_modules
 .DS_Store
 .fleet
 .idea
+
+#documentation
+前端概要设计.md
+需求文档（PRD）.md

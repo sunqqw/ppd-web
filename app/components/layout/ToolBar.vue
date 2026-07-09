@@ -19,6 +19,7 @@ const tools: { key: ToolType, label: string, icon: string }[] = [
   { key: 'fill', label: '填充', icon: '🪣' },
   { key: 'picker', label: '取色', icon: '💉' },
   { key: 'select', label: '框选', icon: '⬚' },
+  { key: 'pan', label: '平移', icon: '✋' },
 ]
 
 const currentColor = computed(() => {

@@ -4,7 +4,7 @@ import {
   DEFAULT_IMAGE_PARAMS,
 } from '../../lib/types/grid'
 
-export type ToolType = 'brush' | 'eraser' | 'fill' | 'picker' | 'select'
+export type ToolType = 'brush' | 'eraser' | 'fill' | 'picker' | 'select' | 'pan'
 
 export const QUICK_COLOR_SLOTS = 6
 
@@ -50,6 +50,11 @@ function persistUiSettings(settings: UiSettings) {
 
 const savedUi = loadUiSettings()
 
+function defaultCanvasFixed() {
+  if (typeof window === 'undefined') return true
+  return !window.matchMedia('(max-width: 700px), (pointer: coarse)').matches
+}
+
 export const useSettingsStore = defineStore('settings', {
   state: () => ({
     imageParams: { ...DEFAULT_IMAGE_PARAMS } as ImagePipelineParams,
@@ -59,7 +64,7 @@ export const useSettingsStore = defineStore('settings', {
     tool: 'brush' as ToolType,
     brushSize: 1,
     isPanning: false,
-    canvasFixed: savedUi.canvasFixed ?? true,
+    canvasFixed: savedUi.canvasFixed ?? defaultCanvasFixed(),
     sidePanelCollapsed: savedUi.sidePanelCollapsed ?? false,
     showQuickColors: savedUi.showQuickColors ?? true,
     quickColors: savedUi.quickColors ?? defaultQuickColors(),

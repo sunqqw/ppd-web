@@ -14,16 +14,29 @@ const canvasStore = useCanvasStore()
 const paletteStore = usePaletteStore()
 const settingsStore = useSettingsStore()
 const { onPointerDown, onPointerMove, onPointerUp } = useTools()
-const { onZoom, onPanStart, onPanMove, centerFixedView } = useCanvas()
+const { onZoom, centerFixedView } = useCanvas()
 const { registerRenderer, registerCellChange, registerDrawEnd } = useCanvasRenderer()
 const { scheduleSave } = useDraft()
+
+const {
+  isMobileViewport,
+  isViewportGesture,
+  handlePointerDown: gesturePointerDown,
+  handlePointerMove: gesturePointerMove,
+  handlePointerUp: gesturePointerUp,
+  handlePointerCancel: gesturePointerCancel,
+} = useCanvasGestures({
+  onDrawCancel: () => {
+    onPointerUp()
+    canvasStore.setDrawing(false)
+  },
+})
 
 const containerRef = ref<HTMLDivElement>()
 const patternCanvasRef = ref<HTMLCanvasElement>()
 const gridCanvasRef = ref<HTMLCanvasElement>()
 
 let renderer: PatternRenderer | null = null
-let panState: ReturnType<typeof onPanStart> = null
 let rafId = 0
 let gridRafId = 0
 
@@ -208,29 +221,68 @@ onUnmounted(() => {
 })
 
 function handlePointerDown(e: PointerEvent) {
-  if (e.button === 1 || e.button === 2 || e.altKey) {
-    panState = onPanStart(e)
-    return
+  const canvas = patternCanvasRef.value
+  if (!canvas) return
+
+  const dispatch = gesturePointerDown(e, canvas)
+  if (dispatch === 'viewport') return
+
+  if (dispatch === 'draw') {
+    canvasStore.setDrawing(true)
+    onPointerDown(e, canvas)
   }
-  canvasStore.setDrawing(true)
-  if (patternCanvasRef.value) onPointerDown(e, patternCanvasRef.value)
 }
 
 function handlePointerMove(e: PointerEvent) {
-  if (panState) {
-    onPanMove(e, panState)
+  const canvas = patternCanvasRef.value
+  if (!canvas) return
+
+  const dispatch = gesturePointerMove(e, canvas)
+  if (dispatch === 'viewport') {
     schedulePatternDraw()
     scheduleGridDraw()
     return
   }
-  if (patternCanvasRef.value) onPointerMove(e, patternCanvasRef.value)
+
+  if (dispatch === 'draw') {
+    onPointerMove(e, canvas)
+  }
 }
 
-function handlePointerUp() {
-  panState = null
-  onPointerUp()
-  canvasStore.setDrawing(false)
+function handlePointerUp(e: PointerEvent) {
+  const wasDrawing = canvasStore.isDrawing
+  const dispatch = gesturePointerUp(e)
+
+  if (wasDrawing && !isViewportGesture.value) {
+    onPointerUp()
+    canvasStore.setDrawing(false)
+  }
+
+  if (dispatch === 'viewport' || dispatch === 'draw') {
+    schedulePatternDraw()
+    scheduleGridDraw()
+  }
+}
+
+function handlePointerCancel(e: PointerEvent) {
+  const wasDrawing = canvasStore.isDrawing
+  gesturePointerCancel(e)
+
+  if (wasDrawing && !isViewportGesture.value) {
+    onPointerUp()
+    canvasStore.setDrawing(false)
+  }
+
   schedulePatternDraw()
+  scheduleGridDraw()
+}
+
+function handleWheel(e: WheelEvent) {
+  if (settingsStore.canvasFixed && !isMobileViewport.value) return
+  if (!containerRef.value) return
+  onZoom(e, containerRef.value)
+  schedulePatternDraw()
+  scheduleGridDraw()
 }
 
 const zoomPercent = computed(() =>
@@ -252,7 +304,7 @@ const selectedColorLabel = computed(() =>
   <div
     ref="containerRef"
     class="canvas-area"
-    :class="{ panning: !!panState, 'canvas-fixed': settingsStore.canvasFixed }"
+    :class="{ panning: isViewportGesture, 'canvas-fixed': settingsStore.canvasFixed && !isMobileViewport }"
     @contextmenu.prevent
   >
     <canvas
@@ -262,7 +314,8 @@ const selectedColorLabel = computed(() =>
       @pointermove="handlePointerMove"
       @pointerup="handlePointerUp"
       @pointerleave="handlePointerUp"
-      @wheel.prevent="(e) => { onZoom(e, containerRef!); schedulePatternDraw(); scheduleGridDraw() }"
+      @pointercancel="handlePointerCancel"
+      @wheel.prevent="handleWheel"
     />
     <canvas
       ref="gridCanvasRef"
@@ -319,6 +372,11 @@ const selectedColorLabel = computed(() =>
   display: block;
   width: 100%;
   height: 100%;
+  touch-action: none;
+}
+
+.canvas-area.panning .canvas-layer {
+  cursor: grab;
 }
 
 .grid-layer {

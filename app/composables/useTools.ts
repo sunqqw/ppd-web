@@ -85,6 +85,10 @@ export function useTools() {
       return
     }
 
+    if (settingsStore.tool === 'pan') {
+      return
+    }
+
     if (settingsStore.tool === 'select') {
       selectStart = pos
       canvasStore.setSelection({ x1: pos.x, y1: pos.y, x2: pos.x, y2: pos.y })
