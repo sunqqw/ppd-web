@@ -5,10 +5,7 @@ export function drawGridOverlay(
   ox: number,
   oy: number,
   cellSize: number,
-  canvasW: number,
-  canvasH: number,
 ) {
-  ctx.clearRect(0, 0, canvasW, canvasH)
   ctx.strokeStyle = '#dddddd'
   ctx.lineWidth = 1
 

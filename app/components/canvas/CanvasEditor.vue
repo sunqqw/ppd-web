@@ -8,6 +8,7 @@ import { useCanvasRenderer } from '~/composables/useCanvasRenderer'
 import { useDraft } from '~/composables/useDraft'
 import { PatternRenderer } from '../../../lib/canvas/pattern-renderer'
 import { drawGridOverlay, drawSelection } from '../../../lib/canvas/grid-overlay'
+import { drawCoordinateLabels } from '../../../lib/canvas/coordinate-labels'
 import { drawColorLabels } from '../../../lib/canvas/color-labels'
 
 const canvasStore = useCanvasStore()
@@ -98,15 +99,6 @@ function drawPattern() {
 }
 
 function drawGrid() {
-  if (!settingsStore.showGrid) {
-    const gridCanvas = gridCanvasRef.value
-    if (gridCanvas) {
-      const ctx = gridCanvas.getContext('2d')!
-      ctx.clearRect(0, 0, gridCanvas.width, gridCanvas.height)
-    }
-    return
-  }
-
   const canvas = gridCanvasRef.value
   const container = containerRef.value
   if (!canvas || !container) return
@@ -121,16 +113,31 @@ function drawGrid() {
     canvas.height = ch
   }
 
-  drawGridOverlay(
-    canvas.getContext('2d')!,
-    grid.width,
-    grid.height,
-    transform.offsetX,
-    transform.offsetY,
-    cellSize,
-    cw,
-    ch,
-  )
+  const ctx = canvas.getContext('2d')!
+  ctx.clearRect(0, 0, cw, ch)
+
+  if (settingsStore.showGrid) {
+    drawGridOverlay(
+      ctx,
+      grid.width,
+      grid.height,
+      transform.offsetX,
+      transform.offsetY,
+      cellSize,
+    )
+  }
+
+  if (settingsStore.showCoordinates) {
+    drawCoordinateLabels(
+      ctx,
+      grid.width,
+      grid.height,
+      transform.offsetX,
+      transform.offsetY,
+      cellSize,
+      1,
+    )
+  }
 }
 
 function schedulePatternDraw() {
@@ -179,6 +186,7 @@ watch(
     canvasStore.transform.cellPixelSize,
     canvasStore.selection,
     settingsStore.showGrid,
+    settingsStore.showCoordinates,
     settingsStore.showColorLabels,
     canvasStore.gridRevision,
   ],
