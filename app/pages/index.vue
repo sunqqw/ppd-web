@@ -48,7 +48,11 @@ async function confirmImport(payload: ImportConfirmPayload) {
       params: payload.params,
       syncParamsToSettings: true,
     })
-    message.success(`转换完成，用色 ${result.stats.colorCount} 种，耗时 ${result.stats.processingMs}ms`)
+    message.success(
+      result.stats.targetMaxColors != null
+        ? `转换完成，用色 ${result.stats.colorCount} 种（上限 ${result.stats.targetMaxColors}），耗时 ${result.stats.processingMs}ms`
+        : `转换完成，用色 ${result.stats.colorCount} 种，耗时 ${result.stats.processingMs}ms`,
+    )
   }
   catch (err) {
     message.error(err instanceof Error ? err.message : '图片处理失败')

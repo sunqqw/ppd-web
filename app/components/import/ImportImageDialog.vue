@@ -13,6 +13,11 @@ import {
 } from 'naive-ui'
 import type { ImagePipelineParams } from '../../../lib/types/grid'
 import { DEFAULT_IMAGE_PARAMS } from '../../../lib/types/grid'
+import {
+  DEFAULT_MAX_COLORS,
+  MIN_MAX_COLORS,
+  MAX_MAX_COLORS,
+} from '../../../lib/image/color-reduce'
 import { usePaletteStore } from '~/stores/palette'
 import { useSettingsStore } from '~/stores/settings'
 import { useImagePipeline } from '~/composables/useImagePipeline'
@@ -43,6 +48,13 @@ const customRefWidth = ref(50)
 const customRefHeight = ref(50)
 const localParams = ref<ImagePipelineParams>({ ...DEFAULT_IMAGE_PARAMS })
 const loadingPreview = ref(false)
+
+const limitMaxColors = computed({
+  get: () => localParams.value.maxColors !== null,
+  set: (enabled: boolean) => {
+    localParams.value.maxColors = enabled ? DEFAULT_MAX_COLORS : null
+  },
+})
 
 const { fadeIn } = useGsapMotion()
 
@@ -96,7 +108,7 @@ function resetForm() {
   sizePreset.value = 'auto'
   customRefWidth.value = 50
   customRefHeight.value = 50
-  localParams.value = { ...settingsStore.imageParams }
+  localParams.value = { ...DEFAULT_IMAGE_PARAMS, ...settingsStore.imageParams }
   imageNaturalSize.value = { width: 0, height: 0 }
 }
 
@@ -267,6 +279,30 @@ onUnmounted(revokePreview)
             :min="0"
             :max="100"
           />
+        </div>
+
+        <div class="option-block option-block--inline">
+          <div class="option-label">
+            限制用色数量
+          </div>
+          <NSwitch v-model:value="limitMaxColors" />
+        </div>
+
+        <div v-if="limitMaxColors" class="option-block">
+          <div class="option-label">
+            最多色号
+          </div>
+          <NInputNumber
+            v-model:value="localParams.maxColors"
+            :min="MIN_MAX_COLORS"
+            :max="MAX_MAX_COLORS"
+            :step="1"
+            size="small"
+            style="width: 100%"
+          />
+          <NText depth="3" style="font-size: 12px; display: block; margin-top: 6px; line-height: 1.4">
+            最多使用 {{ localParams.maxColors }} 种色号（含描边），实际可能更少
+          </NText>
         </div>
 
         <NText depth="3" class="import-hint">

@@ -58,7 +58,6 @@ const features = [
   { icon: '🖼️', text: '智能转图' },
   { icon: '🎨', text: '手绘编辑' },
   { icon: '📄', text: '导出打印' },
-  { icon: '🔒', text: '本地运算' },
 ]
 
 let ctx: ReturnType<typeof gsap.context> | undefined

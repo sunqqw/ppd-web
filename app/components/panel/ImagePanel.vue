@@ -51,13 +51,13 @@ const { lastStats } = useImagePipeline()
         上次转换统计
       </div>
       <NText depth="3" style="font-size: 12px">
-        用色 {{ lastStats.colorCount }} 种，耗时 {{ lastStats.processingMs }}ms
+        用色 {{ lastStats.colorCount }} 种<template v-if="lastStats.targetMaxColors != null">（上限 {{ lastStats.targetMaxColors }}）</template>，耗时 {{ lastStats.processingMs }}ms
       </NText>
     </div>
 
     <div class="panel-section">
       <NText depth="3" style="font-size: 12px">
-        导入图片后自动执行：背景移除 → 全图量化 → 描边优先降采样 → 轮廓补全 → 填充色合并
+        导入图片后自动执行：背景移除 → 全图量化 → 描边优先降采样 → 轮廓补全 → 填充色合并 → 用色上限缩减（可选）
       </NText>
     </div>
   </div>

@@ -7,6 +7,7 @@ import { quantizeImage } from './quantize'
 import { sampleToGrid } from './sample-grid'
 import { repairExteriorOutline } from './grid-outline'
 import { mergeFillRegions, removeIsolatedFillSpecks } from './grid-refine'
+import { reduceToMaxColors } from './color-reduce'
 import { PaletteMatcher } from '../color/palette-matcher'
 
 export interface ImageDataPlain {
@@ -37,7 +38,11 @@ export interface ProcessImagePayload {
 
 export interface ProcessImageResult {
   cells: { colorId: string | null }[]
-  stats: { colorCount: number, processingMs: number }
+  stats: {
+    colorCount: number
+    targetMaxColors: number | null
+    processingMs: number
+  }
 }
 
 export function processImage(payload: ProcessImagePayload): ProcessImageResult {
@@ -74,6 +79,11 @@ export function processImage(payload: ProcessImagePayload): ProcessImageResult {
 
   removeIsolatedFillSpecks(grid, matcher)
 
+  // 用色上限缩减：放在 BFS 杂色合并之后，先做空间连贯性优化，再控制种类上限
+  if (params.maxColors !== null && params.maxColors >= 2) {
+    reduceToMaxColors(grid, matcher, params.maxColors)
+  }
+
   const colorSet = new Set<string>()
   for (const cell of grid.cells) {
     if (cell.colorId) colorSet.add(cell.colorId)
@@ -83,6 +93,7 @@ export function processImage(payload: ProcessImagePayload): ProcessImageResult {
     cells: grid.cells,
     stats: {
       colorCount: colorSet.size,
+      targetMaxColors: params.maxColors,
       processingMs: Math.round(performance.now() - start),
     },
   }

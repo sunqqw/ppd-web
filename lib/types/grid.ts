@@ -21,6 +21,8 @@ export interface ImagePipelineParams {
   bgTolerance: number
   mergeThreshold: number
   minRegionSize: number
+  /** 用色上限；null 表示不限制（默认） */
+  maxColors: number | null
 }
 
 export const DEFAULT_IMAGE_PARAMS: ImagePipelineParams = {
@@ -29,6 +31,7 @@ export const DEFAULT_IMAGE_PARAMS: ImagePipelineParams = {
   bgTolerance: 0,
   mergeThreshold: 15,
   minRegionSize: 2,
+  maxColors: null,
 }
 
 export function createEmptyGrid(width: number, height: number): GridState {

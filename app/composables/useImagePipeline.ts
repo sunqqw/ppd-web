@@ -25,7 +25,11 @@ export function useImagePipeline() {
 
   const processing = ref(false)
   const progress = ref('')
-  const lastStats = ref<{ colorCount: number, processingMs: number } | null>(null)
+  const lastStats = ref<{
+    colorCount: number
+    targetMaxColors: number | null
+    processingMs: number
+  } | null>(null)
 
   let worker: Worker | null = null
 
