@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { NTooltip } from 'naive-ui'
 import { useSettingsStore, type ToolType } from '~/stores/settings'
 import { useCanvasStore } from '~/stores/canvas'
 import { usePaletteStore } from '~/stores/palette'
@@ -21,6 +22,13 @@ const tools: { key: ToolType, label: string, icon: string }[] = [
   { key: 'select', label: '框选', icon: '⬚' },
   { key: 'pan', label: '平移', icon: '✋' },
 ]
+
+const viewTools = [
+  { key: 'canvasFixed', label: '固定画布', icon: '📌', active: () => settingsStore.canvasFixed, toggle: () => settingsStore.toggleCanvasFixed() },
+  { key: 'showGrid', label: '显示网格', icon: '#', active: () => settingsStore.showGrid, toggle: () => settingsStore.toggleGrid() },
+  { key: 'showCoordinates', label: '显示坐标', icon: '123', active: () => settingsStore.showCoordinates, toggle: () => settingsStore.toggleCoordinates(), textIcon: true },
+  { key: 'showColorLabels', label: '显示色号', icon: 'A1', active: () => settingsStore.showColorLabels, toggle: () => settingsStore.toggleColorLabels(), textIcon: true },
+] as const
 
 const currentColor = computed(() => {
   if (!canvasStore.selectedColorId) return '#ffffff'
@@ -74,19 +82,26 @@ onMounted(() => {
 
     <div class="toolbar-section">
       <span class="toolbar-label">工具</span>
-      <button
+      <NTooltip
         v-for="tool in tools"
         :key="tool.key"
-        class="tool-btn"
-        :class="{ active: settingsStore.tool === tool.key }"
-        :title="tool.label"
-        @click="settingsStore.setTool(tool.key)"
-        @mousedown="onPress"
-        @mouseup="onRelease"
-        @mouseleave="onRelease"
+        placement="right"
+        :delay="200"
       >
-        {{ tool.icon }}
-      </button>
+        <template #trigger>
+          <button
+            class="tool-btn"
+            :class="{ active: settingsStore.tool === tool.key }"
+            @click="settingsStore.setTool(tool.key)"
+            @mousedown="onPress"
+            @mouseup="onRelease"
+            @mouseleave="onRelease"
+          >
+            {{ tool.icon }}
+          </button>
+        </template>
+        {{ tool.label }}
+      </NTooltip>
     </div>
 
     <div class="tool-divider" />
@@ -107,50 +122,27 @@ onMounted(() => {
 
     <div class="toolbar-section">
       <span class="toolbar-label">视图</span>
-      <button
-        class="tool-btn"
-        :class="{ active: settingsStore.canvasFixed }"
-        title="固定画布（保持当前缩放并居中，禁用平移缩放）"
-        @click="settingsStore.toggleCanvasFixed()"
-        @mousedown="onPress"
-        @mouseup="onRelease"
-        @mouseleave="onRelease"
+      <NTooltip
+        v-for="view in viewTools"
+        :key="view.key"
+        placement="right"
+        :delay="200"
       >
-        📌
-      </button>
-      <button
-        class="tool-btn"
-        :class="{ active: settingsStore.showGrid }"
-        title="显示网格"
-        @click="settingsStore.toggleGrid()"
-        @mousedown="onPress"
-        @mouseup="onRelease"
-        @mouseleave="onRelease"
-      >
-        #
-      </button>
-      <button
-        class="tool-btn"
-        :class="{ active: settingsStore.showCoordinates }"
-        title="显示坐标"
-        @click="settingsStore.toggleCoordinates()"
-        @mousedown="onPress"
-        @mouseup="onRelease"
-        @mouseleave="onRelease"
-      >
-        <span class="tool-label-icon">123</span>
-      </button>
-      <button
-        class="tool-btn"
-        :class="{ active: settingsStore.showColorLabels }"
-        title="显示色号"
-        @click="settingsStore.toggleColorLabels()"
-        @mousedown="onPress"
-        @mouseup="onRelease"
-        @mouseleave="onRelease"
-      >
-        <span class="tool-label-icon">A1</span>
-      </button>
+        <template #trigger>
+          <button
+            class="tool-btn"
+            :class="{ active: view.active() }"
+            @click="view.toggle()"
+            @mousedown="onPress"
+            @mouseup="onRelease"
+            @mouseleave="onRelease"
+          >
+            <span v-if="view.textIcon" class="tool-label-icon">{{ view.icon }}</span>
+            <template v-else>{{ view.icon }}</template>
+          </button>
+        </template>
+        {{ view.label }}
+      </NTooltip>
     </div>
   </aside>
 </template>
@@ -161,6 +153,7 @@ onMounted(() => {
   flex-direction: column;
   align-items: center;
   width: var(--ws-toolbar-w);
+  max-height: 100%;
   padding: 12px 8px;
   background: var(--ws-surface);
   border: 1px solid var(--ws-border);
@@ -168,6 +161,25 @@ onMounted(() => {
   box-shadow: var(--ws-shadow-sm);
   gap: 2px;
   flex-shrink: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--ws-border) transparent;
+}
+
+.toolbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.toolbar::-webkit-scrollbar-thumb {
+  background: var(--ws-border);
+  border-radius: 2px;
+}
+
+.toolbar::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 .toolbar-section {

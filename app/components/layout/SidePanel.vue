@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { NTabs, NTabPane, NSwitch } from 'naive-ui'
+import { NTabs, NTabPane, NSwitch, NTooltip } from 'naive-ui'
 import ColorPanel from '~/components/panel/ColorPanel.vue'
 import SizePanel from '~/components/panel/SizePanel.vue'
 import ImagePanel from '~/components/panel/ImagePanel.vue'
@@ -66,42 +66,56 @@ onMounted(() => {
           <span class="side-panel-title-text">{{ activeTabLabel }}</span>
           <span class="side-panel-title-sub">属性面板</span>
         </div>
-        <button
-          class="side-panel-toggle"
-          title="收起侧栏"
-          @click="settingsStore.setSidePanelCollapsed(true)"
-        >
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-            <path d="M9 3L5 7l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-        </button>
+        <NTooltip placement="left" :delay="200">
+          <template #trigger>
+            <button
+              class="side-panel-toggle"
+              @click="settingsStore.setSidePanelCollapsed(true)"
+            >
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M9 3L5 7l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+          </template>
+          收起侧栏
+        </NTooltip>
       </template>
-      <button
-        v-else
-        class="side-panel-toggle expand"
-        title="展开侧栏"
-        @click="settingsStore.setSidePanelCollapsed(false)"
-      >
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-          <path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-      </button>
+      <NTooltip v-else placement="left" :delay="200">
+        <template #trigger>
+          <button
+            class="side-panel-toggle expand"
+            @click="settingsStore.setSidePanelCollapsed(false)"
+          >
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+        </template>
+        展开侧栏
+      </NTooltip>
     </div>
 
     <div v-if="settingsStore.sidePanelCollapsed" class="side-panel-rail">
-      <button
+      <NTooltip
         v-for="tab in tabs"
         :key="tab.name"
-        class="rail-tab"
-        :class="{ active: activeTab === tab.name }"
-        :title="tab.label"
-        @click="expandToTab(tab.name)"
-        @mousedown="onRailPress"
-        @mouseup="onRailRelease"
-        @mouseleave="onRailRelease"
+        placement="left"
+        :delay="200"
       >
-        {{ tab.icon }}
-      </button>
+        <template #trigger>
+          <button
+            class="rail-tab"
+            :class="{ active: activeTab === tab.name }"
+            @click="expandToTab(tab.name)"
+            @mousedown="onRailPress"
+            @mouseup="onRailRelease"
+            @mouseleave="onRailRelease"
+          >
+            {{ tab.icon }}
+          </button>
+        </template>
+        {{ tab.label }}
+      </NTooltip>
     </div>
 
     <div v-show="!settingsStore.sidePanelCollapsed" class="side-panel-body">
