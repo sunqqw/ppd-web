@@ -60,7 +60,7 @@ export const useSettingsStore = defineStore('settings', {
     imageParams: { ...DEFAULT_IMAGE_PARAMS } as ImagePipelineParams,
     showGrid: true,
     showColorLabels: true,
-    showCoordinates: false,
+    showCoordinates: true,
     tool: 'brush' as ToolType,
     brushSize: 1,
     isPanning: false,
@@ -85,6 +85,10 @@ export const useSettingsStore = defineStore('settings', {
 
     toggleColorLabels() {
       this.showColorLabels = !this.showColorLabels
+    },
+
+    toggleCoordinates() {
+      this.showCoordinates = !this.showCoordinates
     },
 
     toggleCanvasFixed() {
