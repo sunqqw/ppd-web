@@ -120,6 +120,9 @@ onUnmounted(() => {
         <NCheckbox v-model:checked="options.showLegend">
           显示色号图例
         </NCheckbox>
+        <NCheckbox v-model:checked="options.showCoordinates">
+          显示坐标
+        </NCheckbox>
 
         <div>
           <div class="option-label">
