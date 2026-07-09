@@ -131,6 +131,17 @@ onMounted(() => {
       </button>
       <button
         class="tool-btn"
+        :class="{ active: settingsStore.showCoordinates }"
+        title="显示坐标"
+        @click="settingsStore.toggleCoordinates()"
+        @mousedown="onPress"
+        @mouseup="onRelease"
+        @mouseleave="onRelease"
+      >
+        <span class="tool-label-icon">123</span>
+      </button>
+      <button
+        class="tool-btn"
         :class="{ active: settingsStore.showColorLabels }"
         title="显示色号"
         @click="settingsStore.toggleColorLabels()"
