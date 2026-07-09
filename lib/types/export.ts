@@ -3,6 +3,7 @@ export interface DrawingExportOptions {
   showColorLabels: boolean
   showSizeLabel: boolean
   showLegend: boolean
+  showCoordinates: boolean
   scale: 1 | 2 | 4
   format: 'png' | 'jpeg'
 }
@@ -24,6 +25,7 @@ export const DEFAULT_DRAWING_EXPORT: DrawingExportOptions = {
   showColorLabels: true,
   showSizeLabel: true,
   showLegend: true,
+  showCoordinates: true,
   scale: 2,
   format: 'png',
 }
